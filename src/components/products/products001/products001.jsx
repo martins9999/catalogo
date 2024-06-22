@@ -23,15 +23,15 @@ const products = [
 
 function Products001 () {
 
-    const { shoppingCart, setShoppingCart, adicionarItem, removerItem } = useContext(UseContext);
+    const { shoppingCart, adicionarItem } = useContext(UseContext);
 
     return (
         <ContainerProd>
             {
                 products.map(item => (
-                <ContentProd>
-                    <img alt="" src={item.imagem}  />
-                    <TextProd>
+                <ContentProd height="430px" heightImg="49%">
+                    <img alt="" src={item.imagem} />
+                    <TextProd height="46%">
                         <b>{item.title}</b>
                         <spam>{item.material}</spam>
                         <spam>{item.de}</spam>
@@ -42,14 +42,14 @@ function Products001 () {
                     </TextProd>
                     <ButtonsProd>
                         <button onClick={() => adicionarItem(item.id, products)}>ADICIONAR<PiShoppingCart /></button>
-                        <section>
+                        {/* <section>
                             {shoppingCart.map((item) => (
                                 <>
                                     <i>Qtd {item.quantity}</i>
                                     <span>Total: R$ {(item.quantity * (item.product.price * 0.15 + item.product.price) ).toFixed(2)}</span>
                                 </>
                             ))}
-                        </section>
+                        </section> */}
                     </ButtonsProd>
                 </ContentProd>
                 ))

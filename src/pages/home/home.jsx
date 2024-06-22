@@ -1,13 +1,9 @@
 import { Barra, Button, Container, Content, HomeContainer} from "./style.home";
-import Banner1 from '../../assets/imgApp/banner5.jpg';
-import Banner2 from '../../assets/imgApp/banner6.jpg';
-import Cartoes from '../../assets/imgApp/cartoes.png';
 import CA10230 from '../../assets/casas-arranhadores/c-a-10230.jpg';
 import KitHappyCat from '../../assets/brinquedos-acessorios/kitHappyCat.png';
 import Uz42 from '../../assets/brinquedos-acessorios/Uz42.png';
 import v10284 from '../../assets/brinquedos-acessorios/v-10284.jpg';
-import { ContainerBanner, ContentImg, ContentText, Span } from "../../components/banner.style/style.banner";
-import { useState } from "react";
+import { ContainerBanner, ContentImg2, ContentText, Span } from "../../components/banner.style/style.banner";
 
 
 function Home ({setOpenMenu}) {
@@ -16,16 +12,11 @@ function Home ({setOpenMenu}) {
     return (
        <HomeContainer>
             <ContainerBanner>
-                <ContentImg dsp="none">     
-                    <img alt="" src={Banner1} />
-                </ContentImg>
                 <ContentText>
-                    <Span>PRODUTOS PARA</Span>
-                    <Span>CÃES & GATOS</Span>
+                    <Span>Fabrica Pet</Span>
+                    <Span>Câes & Gatos</Span>
                 </ContentText>
-                <ContentImg>
-                    <img alt="" src={Banner2} />
-                </ContentImg>
+                <ContentImg2 />
             </ContainerBanner>
             <Container>
                 <Content scale="scale(1.05)" cursor="pointer">
@@ -48,7 +39,7 @@ function Home ({setOpenMenu}) {
             <Barra>
                 <Button  onClick={()=>setOpenMenu(true)}>Ver Mais Produtos</Button>
             </Barra>
-            <Barra BG="rgb(190,190,190)">
+            {/* <Barra BG="rgb(190,190,190)">
 
 
             </Barra>
@@ -56,7 +47,7 @@ function Home ({setOpenMenu}) {
                 <Content>
                     <img alt="" src={Cartoes} />
                 </Content>
-            </Container>
+            </Container> */}
        </HomeContainer>
     )
 }

@@ -10,9 +10,9 @@ import { PiShoppingCart } from "react-icons/pi";
 function Header ({openMenu, setOpenMenu, setCalc, calc}) {
 
     const items = [
-        { name:'ÍNICIO', link:'/' },
-        { name:'CASAS, ARRANHADORES', link:'/vendas1' },
-        { name:'OUTROS PRODUTOS', link:'/vendas2' },
+        { name:'Ínicio', link:'/' },
+        { name:'Casas com (e) Arranhador', link:'/vendas1' },
+        { name:'Variedades', link:'/vendas2' },
     ]
 
     const navigate = useNavigate();
@@ -97,7 +97,7 @@ function Header ({openMenu, setOpenMenu, setCalc, calc}) {
                             <Item onClick={()=> navigate( item.link )}>
                                 <span>{ item.name }</span>
                                 <svg>
-                                    <path d="M0 14 L10 7.5 L0 0" ></path>
+                                    <path d="M-5 14 L10 7.5 L0 3" ></path>
                                 </svg>
                             </Item>
                         ))}

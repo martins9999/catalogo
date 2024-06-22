@@ -5,7 +5,7 @@ export const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background: linear-gradient(#87ceeb, #e0f6ff);
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 `;
@@ -37,9 +37,9 @@ export const Content = styled.div`
     font-weight: 500;
     padding: 7px;
     border: 1px solid #fff;
-    background-color: rgb(220,220,220);
+    background-color: rgb(240,240,240);
     border-radius: 10px;
-    color: rgb(50,50,100);
+    color: #000;
     gap: 10px;
     transition: .5s;
     cursor: pointer;

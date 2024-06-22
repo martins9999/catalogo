@@ -36,7 +36,7 @@ export const ContentProd = styled.div`
 
 > img {
     width: 100%;
-    height: 46%;
+    height: ${props => props.heightImg};
     border-radius: 10px;
     padding: 7px;
     box-sizing: border-box;
