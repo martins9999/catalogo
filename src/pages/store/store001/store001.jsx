@@ -1,4 +1,4 @@
-import { ContainerBanner, ContentImg2, ContentText, Span } from "../../../components/banner.style/style.banner";
+import { ContainerBanner, ContentImg, ContentText, Span } from "../../../components/banner.style/style.banner";
 import { ContainerStore, PageStorie } from "../style.store";
 import Products001 from "../../../components/products/products001/products001";
 
@@ -13,7 +13,7 @@ function Store001 () {
                         <Span>&</Span> 
                         <Span>ARRANHADORES</Span>
                     </ContentText>
-                    <ContentImg2 />    
+                    <ContentImg />    
                 </ContainerBanner>
                 <Products001 />
             </ContainerStore>

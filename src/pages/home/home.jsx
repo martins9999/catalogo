@@ -3,7 +3,7 @@ import CA10230 from '../../assets/casas-arranhadores/c-a-10230.jpg';
 import KitHappyCat from '../../assets/brinquedos-acessorios/kitHappyCat.png';
 import Uz42 from '../../assets/brinquedos-acessorios/Uz42.png';
 import v10284 from '../../assets/brinquedos-acessorios/v-10284.jpg';
-import { ContainerBanner, ContentImg2, ContentText, Span } from "../../components/banner.style/style.banner";
+import { ContainerBanner, ContentImg, ContentText, Span } from "../../components/banner.style/style.banner";
 
 
 function Home ({setOpenMenu}) {
@@ -16,7 +16,7 @@ function Home ({setOpenMenu}) {
                     <Span>Fabrica Pet</Span>
                     <Span>Câes & Gatos</Span>
                 </ContentText>
-                <ContentImg2 />
+                <ContentImg anim="img3 " />
             </ContainerBanner>
             <Container>
                 <Content scale="scale(1.05)" cursor="pointer">

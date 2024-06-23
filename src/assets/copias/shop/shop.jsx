@@ -4,7 +4,7 @@ import { UseContext } from "../../context/context";
 import { PiTrashFill } from "react-icons/pi";
 
 const Shop = () => {
-    const { shoppingCart, removerItem } = useContext(UseContext);
+    const { shoppingCart, setShoppingCart, adicionarItem, removerItem } = useContext(UseContext);
 
     
     return (

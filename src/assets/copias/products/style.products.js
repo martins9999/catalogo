@@ -23,7 +23,7 @@ export const ContainerProd = styled.div`
 `;
 export const ContentProd = styled.div`
     width: 100%;
-    height: ${props => props.height};
+    height: 430px;
     box-sizing: border-box;
     background-color: rgb(240,240,240);
     color: #000;
@@ -45,7 +45,7 @@ export const ContentProd = styled.div`
 `;
 export const TextProd = styled.div`
     width: 100%;
-    height: ${props => props.height};
+    height: 46%;
     display: flex;
     flex-direction: column;
     padding-left: 7px;

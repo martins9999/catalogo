@@ -1,6 +1,10 @@
 import styled from "styled-components";
-import Banner1 from '../../assets/imgApp/banner1.jpg';
-import Banner2 from '../../assets/imgApp/banner2.jpg';
+import img1 from '../../assets/imgApp/img1.png';
+import img2 from '../../assets/imgApp/img2.png';
+import img3 from '../../assets/imgApp/img3.png';
+import img4 from '../../assets/imgApp/img4.png';
+import img5 from '../../assets/imgApp/img5.png';
+import img6 from '../../assets/imgApp/img6.png';
 import Banner3 from '../../assets/imgApp/banner3.jpg';
 import Banner4 from '../../assets/imgApp/banner4.jpg';
 import Banner5 from '../../assets/imgApp/banner5.jpg';
@@ -46,97 +50,37 @@ export const ContentText = styled.div`
     padding-left: 8px;
 }
 `;
-export const ContentImg1 = styled.div`
+export const ContentImg = styled.div`
     width: 25%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    animation: 40s img1 infinite linear;
+    animation: 20s img1 infinite linear;
 @keyframes img1 {
     0%{
-        background-image: url(${Banner1});
+        background-image: url(${img1});
     }
-    10%{
-        background-image: url(${Banner2});
+    15%{
+        background-image: url(${img2});
     }
-    20%{
-        background-image: url(${Banner3});
+    27%{
+        background-image: url(${img3});
     }
-    30%{
-        background-image: url(${Banner4});
-    }
-    40%{
-        background-image: url(${Banner5});
-    }
-    50%{
-        background-image: url(${Banner6});
+    45%{
+        background-image: url(${img4});
     }
     60%{
-        background-image: url(${Banner7});
-    }
-    70%{
-        background-image: url(${Banner8});
+        background-image: url(${img5});
     }
     80%{
-        background-image: url(${Banner3});
-    }
-    90%{
-        background-image: url(${Banner5});
+        background-image: url(${img5});
     }
     100%{
-        background-image: url(${Banner1});
+        background-image: url(${img1});
     }
-
 }
 @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
     width: 40%;
-}
-`;
-export const ContentImg2 = styled.div`
-    width: 25%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    animation: 40s img2 infinite linear;
-@keyframes img2 {
-    0%{
-        background-image: url(${Banner8});
-    }
-    10%{
-        background-image: url(${Banner6});
-    }
-    20%{
-        background-image: url(${Banner1});
-    }
-    30%{
-        background-image: url(${Banner2});
-    }
-    40%{
-        background-image: url(${Banner7});
-    }
-    50%{
-        background-image: url(${Banner5});
-    }
-    60%{
-        background-image: url(${Banner3});
-    }
-    70%{
-        background-image: url(${Banner4});
-    }
-    80%{
-        background-image: url(${Banner2});
-    }
-    90%{
-        background-image: url(${Banner5});
-    }
-    100%{
-        background-image: url(${Banner8});
-    }
-
-}
-@media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
-    display: ${props => props.dsp};
-    width: 50%;
 }
 `;
 export const Span = styled.div`

@@ -104,7 +104,8 @@ function Header ({openMenu, setOpenMenu, setCalc, calc}) {
                     </Items>
                 </List>
                 <ShoppingCartSvg onClick={()=> navigate('/shop')}>
-                    <PiShoppingCart /><span>1</span>
+                    <PiShoppingCart />
+                    {/* <span>1</span> */}
                 </ShoppingCartSvg>
             </HeaderH> 
         </>
