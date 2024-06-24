@@ -1,4 +1,4 @@
-import { ContainerBanner, ContentImg, ContentText, Span } from "../../../components/banner.style/style.banner";
+import { ContainerBanner, ContentText } from "../../../components/banner.style/style.banner";
 import { ContainerStore, PageStorie } from "../style.store";
 import Products001 from "../../../components/products/products001/products001";
 
@@ -7,13 +7,10 @@ function Store001 () {
     return (
         <PageStorie>
             <ContainerStore>
-                <ContainerBanner>
+                <ContainerBanner>   
                     <ContentText>
-                        <Span>CASAS</Span>
-                        <Span>&</Span> 
-                        <Span>ARRANHADORES</Span>
+                        <span>Casinhas & Arranhadores</span>
                     </ContentText>
-                    <ContentImg />    
                 </ContainerBanner>
                 <Products001 />
             </ContainerStore>

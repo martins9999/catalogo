@@ -4,10 +4,13 @@ import styled from "styled-components";
 export const PageStorie = styled.div`
     width: 100%;
     min-height: 100vh;
-    background: rgb(180,200,200);
+    background: linear-gradient(#87ceeb, #e0f6ff);
 `;
 export const ContainerStore = styled.div`
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 export const ContentText = styled.div`
     width: 50%;

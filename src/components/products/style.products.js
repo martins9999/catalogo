@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const ContainerProd = styled.div`
     margin-top: 50px;
-    width: 100%;
+    width: 97%;
     display: grid;
+    background-color: #fff;
     grid-template-columns: repeat(5, 1fr);
     row-gap: 30px;
     column-gap: 20px;
@@ -26,13 +27,15 @@ export const ContentProd = styled.div`
     width: 100%;
     height: ${props => props.height};
     box-sizing: border-box;
-    background-color: #fff;;
     color: #000;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    border-radius: 10px;
     transition: .5s;
+    border-bottom: rgb(90,140,90) .5px solid;
+&:hover {
+    background-color: rgb(240,240,240);
+}
 
 > img {
     width: 100%;
@@ -41,7 +44,6 @@ export const ContentProd = styled.div`
     padding: 7px;
     box-sizing: border-box;
 }
-
 `;
 export const TextProd = styled.div`
     width: 100%;
@@ -52,22 +54,18 @@ export const TextProd = styled.div`
     gap: 5px;
 
  >span {
-    color: red;
+    color: rgb(100,100,100);
     font-size: 12px;
     font-weight: 600;
 > tt {
-    color: green;
+    color: #000;
     font-size: 13px;
     font-weight: 600;
 }
  }
 >b {
-    font-size: 14px;
-    color: green;
- preco {
-    color: blue;
- }
- 
+    font-size: 16px;
+    color: #000; 
 }
 
 `;
@@ -83,11 +81,11 @@ export const ButtonsProd = styled.div`
 
  > button {
     cursor: pointer;
-    border: 1px solid red;
+    border: none;
     border-radius: 8px;
     padding: 2px 10px;
-    background-color: rgb(240,240,240);
-    color: red;
+    background-color: green;
+    color: #fff;
     font-size: 14px;
     display: flex;
     font-weight: 600;
@@ -99,17 +97,11 @@ export const ButtonsProd = styled.div`
         height: 17px;
    }
  }
- > section {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 60%;
-}
 >b {
-    font-size: 14px;
-    color: green;
+    font-size: 16px;
+    color: rgb(90,90,90);
  preco {
-    color: red;
+    color: green;
  }
  
 }

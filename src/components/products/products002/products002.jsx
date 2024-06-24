@@ -1,8 +1,9 @@
 import V10282 from '../../../assets/brinquedos-acessorios/v-10282.jpg';
 import { useContext } from 'react';
 import { UseContext } from '../../../context/context';
-import { PiShoppingCart } from 'react-icons/pi';
 import { ButtonsProd, ContainerProd, ContentProd, TextProd } from '../style.products';
+import { CgAdd } from 'react-icons/cg';
+import { BsCart4 } from 'react-icons/bs';
 
 const products = [
   {
@@ -47,11 +48,7 @@ function Products002 () {
                 </TextProd>
                 <ButtonsProd>
                     <b>Á Vista por <preco> { formatarMoeda(it.preco)} </preco> + valor do frete</b>
-                    <button onClick={() => adicionarItem(it.id, products)}>Adicionar<PiShoppingCart /></button>
-                    {/* <section>
-                        <i>Qtd {item.quantity}</i>
-                        <span>Total: R$ {(item.quantity * (item.product.price * 0.15 + item.product.price) ).toFixed(2)}</span>
-                    </section> */}
+                    <button onClick={() => adicionarItem(it.id, products)}><CgAdd/><BsCart4/></button>
                 </ButtonsProd>
             </ContentProd>
           ))

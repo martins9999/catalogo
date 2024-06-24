@@ -3,29 +3,25 @@ import styled from "styled-components";
 export const HeaderH = styled.header`
     width: 100%;
     height: 50px;
-    background-color: rgb(20,20,20);
+    background-color: rgb(50,80,200);
     color: #fff;
     position: fixed;
     top: 0;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
     align-items: center;
 `;
 export const ButtonContainer = styled.div`
     margin-left: 5px;
-    width: 26px;
-    height: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(180,180,180);
+    width: 28px;
+    height: 28px;
     cursor: pointer;
 &:hover {
-    color: #fff;
+    color: yellow;
 }
 > svg {
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
 }
 `;
 export const List = styled.div`
@@ -35,8 +31,6 @@ export const List = styled.div`
     left: ${ props => props.onOff ? '0' : '-100%'};
     height: calc(100vh - 50px);
     background-color: rgb(0,0,0,.5);
-    
-
 `;
 export const Items = styled.div`
     width: 300px;
@@ -44,7 +38,7 @@ export const Items = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: rgb(20,20,20);
+    background-color: rgb(50,80,200);
     
 `;
 
@@ -55,17 +49,17 @@ export const Item = styled.div`
     display: flex;
     align-items: center;
     font-size: 13px;
-    color: rgb(180,180,180);
-    stroke: rgb(180,180,180);
+    color: yellow;
+    stroke: yellow;
     cursor: pointer;
 &:hover {
-    color: #fff;
-    stroke: #fff;
+    color: yellow;
+    stroke: yellow;
 }
 > svg {
     fill: transparent;
     stroke-width: 1px;
-    width: 14px;
+    width: 10px;
     height: 14px;
 }
 `;
@@ -175,16 +169,27 @@ export const X = styled.div`
     justify-content: flex-end;
 `;
 export const ShoppingCartSvg = styled.div`
+    width: 50px;
+    height: 50px;
     margin-right: 20px;
     font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    left: 50px;
 > svg {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
+&:hover {
+    color: yellow;
+    cursor: pointer;
+}
 }
 > span {
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: red;
     width: 22px;
     height: 22px;

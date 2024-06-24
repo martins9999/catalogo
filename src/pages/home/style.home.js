@@ -16,46 +16,48 @@ export const Banner = styled.div`
     background-color: rgb(220,230,240);
 `;
 export const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    margin-top: 50px;
+    width: 97%;
+    display: grid;
+    background-color: #fff;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 30px;
+    column-gap: 20px;
     padding: 20px;
     box-sizing: border-box;
 
+@media only screen and (min-device-width : 769px) and (max-device-width : 1366px) {
+    grid-template-columns: repeat(4, 1fr);
+}
 @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
+    display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 `;
 export const Content = styled.div`
-    width: 20%;
-    height: 350px;
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+    color: #000;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-size: 17px;
-    font-weight: 500;
-    padding: 7px;
-    border: 1px solid #fff;
-    background-color: rgb(240,240,240);
-    border-radius: 10px;
-    color: #000;
-    gap: 10px;
+    gap: 5px;
     transition: .5s;
-    cursor: pointer;
-
-&:hover{
+    border-bottom: rgb(90,140,90) .5px solid;
+&:hover {
     background-color: rgb(240,240,240);
-    color: #000;
 }
+
 > img {
     width: 100%;
-    height: 80%;
+    height: 70%;
     border-radius: 10px;
-}
-@media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
-    width: 95%;
-    font-size: 14px;
+    padding: 7px;
+    box-sizing: border-box;
 }
 `;
 export const Barra = styled.div`

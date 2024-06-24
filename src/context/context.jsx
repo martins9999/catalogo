@@ -3,11 +3,13 @@ import { createContext, useState } from "react";
 export const UseContext = createContext();
 
 export const UseStorage = ({children}) => {
+    const [openMenu, setOpenMenu] = useState(false)
+    const [openShoppingCart, setOpenShoppingCart] = useState(false)
+    //const [calc, setCalc] = useState(false)
    const [shoppingCart, setShoppingCart] = useState([])
-   const [shop, setShop] = useState()
-   const [sho, setSho] = useState(false)
-   console.log(sho)
-   console.log(shop)
+   const [qttItemsShop, setQttItemsShop] = useState()
+   const [emptyCart, setEmptyCart] = useState(false)
+   console.log(qttItemsShop)
 
    const formatarMoeda = (valor) =>{
         return valor.toLocaleString('pt-br', {
@@ -16,10 +18,10 @@ export const UseStorage = ({children}) => {
    }
 
    const adicionarItem = (id, products) => {
-    setShop(1)
-    setSho(true)
-    if(shop >= 1) {
-        setShop(shop + 1)
+    setQttItemsShop(1)
+    setEmptyCart(true)
+    if(qttItemsShop >= 1) {
+        setQttItemsShop(qttItemsShop + 1)
     }
     const item = products.find(
         (item) => item.id === id
@@ -35,6 +37,7 @@ export const UseStorage = ({children}) => {
                 if(item.product.id === id)
                 {
                     const adicionando =  {...item, quantity: item.quantity ++}
+                    console.log(adicionando)
                     
                 }
             return item
@@ -51,10 +54,10 @@ export const UseStorage = ({children}) => {
 }
 
 const removerItem = (id) => {
-    if(shop >= 1) {
-        setShop(shop - 1)
-        if(shop <= 1) {
-            setSho(false)
+    if(qttItemsShop >= 1) {
+        setQttItemsShop(qttItemsShop - 1)
+        if(qttItemsShop <= 1) {
+            setEmptyCart(false)
         }
     }
     const alreadyInShoppingCart = shoppingCart.find(
@@ -66,6 +69,7 @@ const removerItem = (id) => {
                 {
                     
                     const removendo = {...item, quantity: item.quantity --}
+                    console.log(removendo)
                     
                 }
             return item
@@ -81,8 +85,8 @@ const removerItem = (id) => {
 }
 const limparCarrinho = () => {
     setShoppingCart([])
-    setShop()
-    setSho(false)
+    setQttItemsShop()
+    setEmptyCart(false)
 
 }
 
@@ -90,11 +94,16 @@ return (
     <UseContext.Provider value={{
         shoppingCart,
         setShoppingCart,
+        openShoppingCart,
+        setOpenShoppingCart,
+        openMenu,
+        setOpenMenu,
         adicionarItem,
         removerItem,
-        formatarMoeda,
         limparCarrinho,
-        sho
+        formatarMoeda,
+        emptyCart,
+        qttItemsShop,
     }}>
         {children}
     </UseContext.Provider>

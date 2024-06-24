@@ -2,52 +2,71 @@ import { Barra, Button, Container, Content, HomeContainer} from "./style.home";
 import CA10230 from '../../assets/casas-arranhadores/c-a-10230.jpg';
 import KitHappyCat from '../../assets/brinquedos-acessorios/kitHappyCat.png';
 import Uz42 from '../../assets/brinquedos-acessorios/Uz42.png';
-import v10284 from '../../assets/brinquedos-acessorios/v-10284.jpg';
-import { ContainerBanner, ContentImg, ContentText, Span } from "../../components/banner.style/style.banner";
+import V10284 from '../../assets/brinquedos-acessorios/v-10284.jpg';
+import { ContainerBanner, ContentText } from "../../components/banner.style/style.banner";
+import { ButtonsProd } from "../../components/products/style.products";
+import { CgAdd } from "react-icons/cg";
+import { BsCart4 } from "react-icons/bs";
+import { useContext } from "react";
+import { UseContext } from "../../context/context";
+
+const products = [
+    {
+        imagem:Uz42,
+        nome: "Varinha Bolinha de guizo com Pelúcia",
+        id:10217,
+        preco: 7.54,
+    },
+    {
+        imagem:V10284,
+        nome: "Varinha Bolinha de guizo com Pelúcia",
+        id:10217,
+        preco: 7.54,
+    },
+    {
+        imagem:CA10230,
+        nome: "Varinha Bolinha de guizo",
+        id:10218,
+        preco: 12.97,
+    },
+    {
+        imagem:KitHappyCat,
+        nome: "guizo com Pelúcia",
+        id:10219,
+        preco: 5.22,
+    },
+  
+  ]
 
 
-function Home ({setOpenMenu}) {
+function Home () {
+
+    const { adicionarItem, formatarMoeda, setOpenMenu  } = useContext(UseContext);
 
 
     return (
        <HomeContainer>
             <ContainerBanner>
                 <ContentText>
-                    <Span>Fabrica Pet</Span>
-                    <Span>Câes & Gatos</Span>
+                    <span>Fabrica Pet</span>
+                    <span>Câes & Gatos</span>
                 </ContentText>
-                <ContentImg anim="img3 " />
             </ContainerBanner>
             <Container>
-                <Content scale="scale(1.05)" cursor="pointer">
-                    <img alt="" src={CA10230} />
-                    <span>ARRANHADOR BARIRL R$ 220,80 </span>
-                </Content>
-                <Content scale="scale(1.05)" cursor="pointer">
-                    <img alt="" src={KitHappyCat} />
-                    <span>KIT HAPPY CAT R$ 18,40 </span>
-                </Content>
-                <Content scale="scale(1.05)" cursor="pointer">
-                    <img alt="" src={Uz42} />
-                    <span>GRAMINHA PARA CÃES R$ 10,35 </span>
-                </Content>
-                <Content scale="scale(1.05)" cursor="pointer">
-                    <img alt="" src={v10284} />
-                    <span>VARINHA COM RATINHO + PENAS R$ 10,35 </span>
-                </Content>
+                {products.map((it)=>(
+                    <Content>
+                         <img alt="" src={it.imagem}  />
+                        <b>{it.nome}</b>
+                        <ButtonsProd>
+                            <b>Á Vista por <preco> { formatarMoeda(it.preco)} </preco> + valor do frete</b>
+                            <button onClick={() => adicionarItem(it.id, products)}><CgAdd/><BsCart4/></button>
+                        </ButtonsProd>
+                    </Content>
+                ))}
             </Container>
             <Barra>
                 <Button  onClick={()=>setOpenMenu(true)}>Ver Mais Produtos</Button>
             </Barra>
-            {/* <Barra BG="rgb(190,190,190)">
-
-
-            </Barra>
-            <Container>
-                <Content>
-                    <img alt="" src={Cartoes} />
-                </Content>
-            </Container> */}
        </HomeContainer>
     )
 }

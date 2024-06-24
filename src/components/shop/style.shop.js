@@ -1,8 +1,20 @@
 import styled from "styled-components";
 
 export const ContainerShoppingCart = styled.div`
-    margin-top: 50px;
+    position: absolute;
+    top: 50px;
     width: 100%;
+    left: ${ props => props.onOff ? '0' : '-100%'};
+    height: calc(100vh - 50px);
+    background-color: rgb(0,0,0,.5);
+`;
+
+export const ContentShoppingCart = styled.div`
+    position: absolute;
+    width: 300px;
+    height: calc(100vh - 50px);
+    left: ${ props => props.onOff ? '0' : '-100%'};
+    background-color: rgb(50,80,200);
     display: flex;
     flex-direction: column;
     padding: 8px;
@@ -16,18 +28,31 @@ export const ContainerShoppingCart = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        color: red;
+        color: #fff;
+    }
+    >button {
+        background-color: red;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 17px;
+        border: none;
+        width: 150px;
+        margin-left: 65px;
+        border-radius: 8px;
     }
 
 @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
 
 }
 `;
-export const ContentShoppinCart = styled.div`
-    width: 25%;
-    height: 140px;
+export const ContentItemsShoppinCart = styled.div`
+    width: 100%;
+    height: 90px;
     box-sizing: border-box;
-    background-color: rgb(220,220,220);
+    background-color: rgb(250,250,220);
     color: rgb(50,50,100);
     display: flex;
     gap: 5px;
