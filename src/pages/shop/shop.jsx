@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import { ButtonsShoppingCart, ContainerShoppingCart, ContentShoppinCart, TextShoppinCart } from "./style.shop";
 import { UseContext } from "../../context/context";
-import { PiTrashFill } from "react-icons/pi";
+import { CgAdd, CgRemove } from "react-icons/cg";
+
 
 const Shop = () => {
-    const { shoppingCart, removerItem } = useContext(UseContext);
+    const { shoppingCart, adicionarItem, removerItem,sho, formatarMoeda, limparCarrinho} = useContext(UseContext);
+
+    const totalValor = shoppingCart.reduce((acc, item) => 
+        item.quantity * item.product.preco + acc, 0
+)
 
     
     return (
@@ -14,18 +19,27 @@ const Shop = () => {
                 <ContentShoppinCart>
                     <img alt="" src={item.product.imagem}  />
                     <TextShoppinCart>
-                        <b>{item.product.title}</b>
+                        <b>{item.product.nome}</b>
                         <span>Código: {item.product.id}</span>
-                        <span>Preço da unidade: R$ {(item.product.price * 0.15 + item.product.price).toFixed(2)}</span>
-                        <span>Quantidade: <i>{item.quantity}</i></span>
+                        <span>Preço da unidade: R$ {formatarMoeda(item.product.preco)}</span>
+                        <span>Quantidade: 
+                            <CgRemove onClick={() => removerItem(item.product.id)}/>
+                            <i>{item.quantity}</i>
+                            <CgAdd onClick={() => adicionarItem(item.product.id, shoppingCart)}/>
+                        </span>
                         <ButtonsShoppingCart>
-                            <button onClick={() => removerItem(item.product.id)}>X<PiTrashFill/> </button>
                         </ButtonsShoppingCart>
-                        <b>Total: R$ {(item.quantity * (item.product.price * 0.15 + item.product.price) ).toFixed(2)}</b>
+                        <b>Total: {formatarMoeda(item.quantity * item.product.preco)}</b>
                     </TextShoppinCart>
                 </ContentShoppinCart>
                 ))
             }
+            { sho ?
+            <>
+            <b>{formatarMoeda(totalValor)}</b>
+            <button onClick={()=>{limparCarrinho()}}>Limpar</button>
+            </>
+             : <vazio>Carrinho Vazio</vazio>}
         </ContainerShoppingCart>
     )
 

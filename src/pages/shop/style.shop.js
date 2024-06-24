@@ -9,6 +9,15 @@ export const ContainerShoppingCart = styled.div`
     gap: 8px;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    >vazio {
+        font-size: 100px;
+        width: 100%;
+        height: calc(100vh - 100px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: red;
+    }
 
 @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
 
@@ -23,12 +32,7 @@ export const ContentShoppinCart = styled.div`
     display: flex;
     gap: 5px;
     border-radius: 10px;
-    cursor: pointer;
     transition: .5s;
-&:hover{
-    background-color: rgb(240,240,240);
-    color: #000;
-}
 
 > img {
     width: 30%;
@@ -54,12 +58,21 @@ export const TextShoppinCart = styled.div`
     padding-left: 10px;
     font-size: 14px;
     font-weight: 500;
->i {
-    background-color: red;
-    color: #fff;
-    padding: 1.5px 6px;
-    border-radius: 50%;
-}
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    >i {
+        background-color: red;
+        color: #fff;
+        padding: 1.5px 6px;
+        border-radius: 50%;
+    }
+    >svg {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        color: red;
+    }
 }
 >b {
     padding-left: 10px;

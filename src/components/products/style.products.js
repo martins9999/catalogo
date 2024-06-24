@@ -9,10 +9,11 @@ export const ContainerProd = styled.div`
     column-gap: 20px;
     padding: 20px;
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+@media only screen and (min-device-width : 769px) and (max-device-width : 1366px) {
+    grid-template-columns: repeat(4, 1fr);
+}
 @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,14 +26,13 @@ export const ContentProd = styled.div`
     width: 100%;
     height: ${props => props.height};
     box-sizing: border-box;
-    background-color: rgb(240,240,240);
+    background-color: #fff;;
     color: #000;
     display: flex;
     flex-direction: column;
     gap: 5px;
     border-radius: 10px;
     transition: .5s;
-    border: .5px solid #000;
 
 > img {
     width: 100%;
@@ -51,23 +51,33 @@ export const TextProd = styled.div`
     padding-left: 7px;
     gap: 5px;
 
->span {
-    font-size: 11px;
-    font-weight: 500;
+ >span {
+    color: red;
+    font-size: 12px;
+    font-weight: 600;
+> tt {
+    color: green;
+    font-size: 13px;
+    font-weight: 600;
 }
+ }
 >b {
-    font-size: 14.5px;
+    font-size: 14px;
+    color: green;
+ preco {
     color: blue;
+ }
+ 
 }
 
 `;
 export const ButtonsProd = styled.div`
     width: 100%;
-    height: 8%;
+    height: 20%;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgb(220,220,220);
     color: blue;
     border-radius: 10px;
 
@@ -94,5 +104,13 @@ export const ButtonsProd = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 60%;
+}
+>b {
+    font-size: 14px;
+    color: green;
+ preco {
+    color: red;
+ }
+ 
 }
 `;

@@ -4,8 +4,23 @@ export const UseContext = createContext();
 
 export const UseStorage = ({children}) => {
    const [shoppingCart, setShoppingCart] = useState([])
+   const [shop, setShop] = useState()
+   const [sho, setSho] = useState(false)
+   console.log(sho)
+   console.log(shop)
+
+   const formatarMoeda = (valor) =>{
+        return valor.toLocaleString('pt-br', {
+            style: 'currency', currency:'BRL'
+        })
+   }
 
    const adicionarItem = (id, products) => {
+    setShop(1)
+    setSho(true)
+    if(shop >= 1) {
+        setShop(shop + 1)
+    }
     const item = products.find(
         (item) => item.id === id
     );
@@ -20,7 +35,7 @@ export const UseStorage = ({children}) => {
                 if(item.product.id === id)
                 {
                     const adicionando =  {...item, quantity: item.quantity ++}
-                    console.log(adicionando);
+                    
                 }
             return item
         })
@@ -36,6 +51,12 @@ export const UseStorage = ({children}) => {
 }
 
 const removerItem = (id) => {
+    if(shop >= 1) {
+        setShop(shop - 1)
+        if(shop <= 1) {
+            setSho(false)
+        }
+    }
     const alreadyInShoppingCart = shoppingCart.find(
         (item) => item.product.id === id
     );
@@ -45,7 +66,7 @@ const removerItem = (id) => {
                 {
                     
                     const removendo = {...item, quantity: item.quantity --}
-                    console.log(removendo);
+                    
                 }
             return item
         })
@@ -58,7 +79,12 @@ const removerItem = (id) => {
     setShoppingCart(newShoppingCart)
 
 }
+const limparCarrinho = () => {
+    setShoppingCart([])
+    setShop()
+    setSho(false)
 
+}
 
 return (
     <UseContext.Provider value={{
@@ -66,6 +92,9 @@ return (
         setShoppingCart,
         adicionarItem,
         removerItem,
+        formatarMoeda,
+        limparCarrinho,
+        sho
     }}>
         {children}
     </UseContext.Provider>
