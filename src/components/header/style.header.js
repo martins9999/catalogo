@@ -38,7 +38,7 @@ export const Items = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: rgb(50,80,200);
+    background-color: rgb(250,255,250);
     
 `;
 
@@ -48,13 +48,14 @@ export const Item = styled.div`
     gap: 7px;
     display: flex;
     align-items: center;
-    font-size: 13px;
-    color: yellow;
-    stroke: yellow;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    stroke: #000;
     cursor: pointer;
 &:hover {
-    color: yellow;
-    stroke: yellow;
+    color: red;
+    stroke: red;
 }
 > svg {
     fill: transparent;

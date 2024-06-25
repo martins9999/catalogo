@@ -17,24 +17,24 @@ export const UseStorage = ({children}) => {
         })
    }
 
-   const adicionarItem = (id, products) => {
+   const adicionarItem = (ref, products) => {
     setQttItemsShop(1)
     setEmptyCart(true)
     if(qttItemsShop >= 1) {
         setQttItemsShop(qttItemsShop + 1)
     }
     const item = products.find(
-        (item) => item.id === id
+        (item) => item.ref === ref
     );
 
     const alreadyInShoppingCart = shoppingCart.find(
-        (item) => item.product.id === id
+        (item) => item.product.ref === ref
     );
 
 
     if (alreadyInShoppingCart) {
         const newShoppingCart = shoppingCart.map((item) => {    
-                if(item.product.id === id)
+                if(item.product.ref === ref)
                 {
                     const adicionando =  {...item, quantity: item.quantity ++}
                     console.log(adicionando)
@@ -53,7 +53,7 @@ export const UseStorage = ({children}) => {
     setShoppingCart(newShoppingCart)
 }
 
-const removerItem = (id) => {
+const removerItem = (ref) => {
     if(qttItemsShop >= 1) {
         setQttItemsShop(qttItemsShop - 1)
         if(qttItemsShop <= 1) {
@@ -61,11 +61,11 @@ const removerItem = (id) => {
         }
     }
     const alreadyInShoppingCart = shoppingCart.find(
-        (item) => item.product.id === id
+        (item) => item.product.ref === ref
     );
     if (alreadyInShoppingCart && alreadyInShoppingCart?.quantity > 1) {
         const newShoppingCart = shoppingCart.map((item) => {
-            if(item.product.id === id)
+            if(item.product.ref === ref)
                 {
                     
                     const removendo = {...item, quantity: item.quantity --}
@@ -78,7 +78,7 @@ const removerItem = (id) => {
         return
     }
     const newShoppingCart = shoppingCart.filter(
-        (item) => item.product.id !== id
+        (item) => item.product.ref !== ref
     )
     setShoppingCart(newShoppingCart)
 

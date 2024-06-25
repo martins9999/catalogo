@@ -25,7 +25,7 @@ const products = [
       nome: "guizo com Pelúcia",
       medidas:"35",
       id:10219,
-      preco: 5.22,
+      preco: 5.23,
   },
 
 ]
@@ -34,11 +34,15 @@ function Products002 () {
 
   const { adicionarItem, formatarMoeda  } = useContext(UseContext);
 
+  const newProducts = products.map((it) => {
+    return {...it, preco: (it.preco * 0.15 + it.preco).toFixed(2)}
+  })
+
   return (
     <>
       <ContainerProd>
       {
-          products.map((it) => (
+          newProducts.map((it) => (
             <ContentProd height="350px" heightImg="60%">
                 <img alt="" src={it.imagem}  />
                 <TextProd height="22%">
@@ -48,7 +52,7 @@ function Products002 () {
                 </TextProd>
                 <ButtonsProd>
                     <b>Á Vista por <preco> { formatarMoeda(it.preco)} </preco> + valor do frete</b>
-                    <button onClick={() => adicionarItem(it.id, products)}><CgAdd/><BsCart4/></button>
+                    <button onClick={() => adicionarItem(it.id, newProducts)}><CgAdd/><BsCart4/></button>
                 </ButtonsProd>
             </ContentProd>
           ))

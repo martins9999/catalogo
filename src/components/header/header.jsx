@@ -13,10 +13,10 @@ function Header () {
     
     const items = [
         { name:'Ínicio', link:'/' },
-        { name:'Casas com (e) Arranhador', link:'/vendas1' },
-        { name:'Variedades', link:'/vendas2' },
+        { name:'Casinhas e Arranhadores', link:'/vendas1' },
+        { name:'Outros Produtos', link:'/vendas2' },
     ]
-    const { openMenu, setOpenMenu, openShoppingCart, setOpenShoppingCart, qttItemsShop} = useContext(UseContext);
+    const { openMenu, setOpenMenu, openShoppingCart, setOpenShoppingCart, qttItemsShop, emptyCart} = useContext(UseContext);
 
     const navigate = useNavigate();
     
@@ -47,7 +47,7 @@ function Header () {
                         ))}
                     </Items>
                 </List>
-                <Shop onOff={openShoppingCart} setOpenShoppingCart={setOpenShoppingCart}/>
+                <Shop onOff={openShoppingCart}/>
 
                 <ShoppingCartSvg>
                     {openMenu ?
@@ -57,7 +57,9 @@ function Header () {
                         :
                         <>
                             <PiShoppingCart onClick={ ()=> setOpenShoppingCart(true) }/>
+                            {emptyCart ?
                             <span>{qttItemsShop}</span>
+                            :''}
                         </>
                         }
                 </ShoppingCartSvg>

@@ -1,26 +1,32 @@
 import styled from "styled-components";
 
 export const ContainerShoppingCart = styled.div`
-    position: absolute;
+    position: fixed;
     top: 50px;
-    width: 100%;
+    width: 30%;
+    height: calc(100vh - 50px);
     left: ${ props => props.onOff ? '0' : '-100%'};
     height: calc(100vh - 50px);
     background-color: rgb(0,0,0,.5);
+    overflow-x: hidden;
+    overflow-y: auto;
+@media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
+    width: 100%;
+}
 `;
 
 export const ContentShoppingCart = styled.div`
     position: absolute;
-    width: 300px;
-    height: calc(100vh - 50px);
+    width: 100%;
+    min-height: calc(100vh - 50px);
     left: ${ props => props.onOff ? '0' : '-100%'};
-    background-color: rgb(50,80,200);
+    background-color: rgb(250,255,250);
     display: flex;
     flex-direction: column;
     padding: 8px;
     gap: 8px;
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
     >vazio {
         font-size: 100px;
         width: 100%;
@@ -28,39 +34,23 @@ export const ContentShoppingCart = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #fff;
-    }
-    >button {
-        background-color: red;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        font-size: 17px;
-        border: none;
-        width: 150px;
-        margin-left: 65px;
-        border-radius: 8px;
+        color: red;
     }
 
-@media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
 
-}
 `;
 export const ContentItemsShoppinCart = styled.div`
     width: 100%;
-    height: 90px;
+    height: 100px;
     box-sizing: border-box;
-    background-color: rgb(250,250,220);
+    border: rgb(90,140,90) .5px solid;
     color: rgb(50,50,100);
     display: flex;
     gap: 5px;
-    border-radius: 10px;
     transition: .5s;
 
 > img {
-    width: 30%;
+    width: 20%;
     height: 100%;
     border-radius: 10px;
     padding: 7px;
@@ -68,9 +58,6 @@ export const ContentItemsShoppinCart = styled.div`
 }
  @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
     width: 100%;
->img {
-    width: 35%;
-}
  }
 `;
 export const TextShoppinCart = styled.div`
@@ -80,9 +67,10 @@ export const TextShoppinCart = styled.div`
     justify-content: space-evenly;
 
 >span {
+    color: rgb(100,100,100);
+    font-size: 13px;
+    font-weight: 600;
     padding-left: 10px;
-    font-size: 14px;
-    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -98,14 +86,25 @@ export const TextShoppinCart = styled.div`
         cursor: pointer;
         color: red;
     }
+    >preco {
+        color: green;
+        font-size: 14px;
+    }
+    >codigo {
+        color: #000;
+    }
 }
 >b {
     padding-left: 10px;
-    font-size: 16px;
-
+    font-size: 15px;
+    >preco {
+        color: green;
+    }
 
 }
-
+@media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
+    width: 80%;
+}
 `;
 export const ButtonsShoppingCart = styled.div`
     width: 100%;
@@ -124,4 +123,42 @@ export const ButtonsShoppingCart = styled.div`
     border: none;
     border-radius: 8px;
 }
+`;
+export const Total = styled.div`
+    position: fixed;
+    bottom: 0;
+    width: 30%;
+    padding: 8px 0;
+    background-color: rgb(250,250,250);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    gap: 2px;
+    color: #000;
+    font-weight: 600;
+    >span {
+        >b {
+            color: green;
+        }
+    }
+
+    >button {
+        margin-top: 8px;
+        background-color: red;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        border: none;
+        padding: 1px 8px;
+        border-radius: 8px;
+    }
+    @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
+        width: 96%;
+        left: 2%;
+    }
 `;

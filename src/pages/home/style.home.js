@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
     width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +48,7 @@ export const Content = styled.div`
     flex-direction: column;
     gap: 5px;
     transition: .5s;
-    border-bottom: rgb(90,140,90) .5px solid;
+    border: rgb(90,140,90) .5px solid;
 &:hover {
     background-color: rgb(240,240,240);
 }
@@ -58,6 +59,9 @@ export const Content = styled.div`
     border-radius: 10px;
     padding: 7px;
     box-sizing: border-box;
+}
+>b {
+    margin-left: 5px;
 }
 `;
 export const Barra = styled.div`

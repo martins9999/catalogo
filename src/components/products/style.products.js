@@ -32,7 +32,7 @@ export const ContentProd = styled.div`
     flex-direction: column;
     gap: 5px;
     transition: .5s;
-    border-bottom: rgb(90,140,90) .5px solid;
+    border: rgb(90,140,90) .5px solid;
 &:hover {
     background-color: rgb(240,240,240);
 }

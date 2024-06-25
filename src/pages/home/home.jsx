@@ -1,5 +1,5 @@
 import { Barra, Button, Container, Content, HomeContainer} from "./style.home";
-import CA10230 from '../../assets/casas-arranhadores/c-a-10230.jpg';
+import CA10230 from '../../assets/casas-arranhadores/10230.png';
 import KitHappyCat from '../../assets/brinquedos-acessorios/kitHappyCat.png';
 import Uz42 from '../../assets/brinquedos-acessorios/Uz42.png';
 import V10284 from '../../assets/brinquedos-acessorios/v-10284.jpg';
@@ -48,14 +48,13 @@ function Home () {
        <HomeContainer>
             <ContainerBanner>
                 <ContentText>
-                    <span>Fabrica Pet</span>
-                    <span>Câes & Gatos</span>
+                    <span>Fabrica Pet Câes & Gatos</span>
                 </ContentText>
             </ContainerBanner>
             <Container>
                 {products.map((it)=>(
                     <Content>
-                         <img alt="" src={it.imagem}  />
+                        <img alt="" src={it.imagem}  />
                         <b>{it.nome}</b>
                         <ButtonsProd>
                             <b>Á Vista por <preco> { formatarMoeda(it.preco)} </preco> + valor do frete</b>
