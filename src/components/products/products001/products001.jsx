@@ -57,8 +57,8 @@ const products = [
         nome:"Arranhador Barril",
         material:"Material: MDF,pelúcia,sisal e manta de juta",
         c:"40",l:"40",a:"49",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diamTextE:"Diâmetro dos orificios exteriores: ", diamE:"18cm",
+        diamTextI:"Diâmetro do orificio interior: ", diamI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10230",
         a1:"1x Barril para gatos",
@@ -70,7 +70,7 @@ const products = [
         nome:"Arranhador Berlim",
         material:"Material: MDF,pelúcia e sisal",
         c:"48",l:"48",a:"120",
-        diametroE:"18cm",
+        diametroE:"Diâmetro dos orificios exteriores: 18cm",
         diametroI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10214",
@@ -476,19 +476,22 @@ function Products001 () {
         <ContainerProd>
             {
                 newProducts.map(it => (
-                <ContentProd height="380px" heightImg="47%">
+                <ContentProd height="385px" heightImg="47%">
                     <img alt="" src={it.imag} />
-                    <TextProd height="33%">
-                        <b>{it.title}</b>
+                    <TextProd height="36%">
+                        <b>{it.nome}</b>
                         <span><tt>{it.material}</tt></span>
-                        <span>Diâmetro dos orificios exteriores: <tt>{it.diametroE}</tt></span>
-                        <span><tt>{it.di}</tt></span>
-                        <span>{it.dd}</span>
-                        <span>Medidas: <tt>{it.medidas}cm</tt></span>
+                        <span>
+                            <tt>Medidas: C-{it.c}</tt> x <tt>L-{it.l}</tt> x <tt>A-{it.a} (cm)</tt>
+                        </span>
+                        <span><tt>{it.diamTextE}{it.diamE}</tt></span>
+                        <span><tt>{it.diamTextI}{it.diamI}</tt></span>
+                        <span><tt>Recomendado: {it.recomendado}</tt></span>
                         <span>Código: <tt>{it.ref}</tt></span>
+                        <span>{it.a1}</span>
                     </TextProd>
                     <ButtonsProd>
-                        <b>Á Vista por <preco> {formatarMoeda(it.preco)} </preco>  <frete>+ valor do frete</frete></b>
+                        <b>Á Vista por <preco> { formatarMoeda(it.preco * 1) } </preco><frete> + valor do frete</frete></b>
                         <button onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd /><BsCart4 /></button>
                     </ButtonsProd>
                 </ContentProd>

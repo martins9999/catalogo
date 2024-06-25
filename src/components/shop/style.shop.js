@@ -126,6 +126,7 @@ export const ButtonsShoppingCart = styled.div`
 `;
 export const Total = styled.div`
     position: fixed;
+    left: ${ props => props.onOff ? '0' : '-100%'};
     bottom: 0;
     width: 30%;
     padding: 8px 0;
@@ -159,6 +160,6 @@ export const Total = styled.div`
     }
     @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
         width: 96%;
-        left: 2%;
+        left: ${ props => props.onOff ? '2%' : '-100%'};
     }
 `;

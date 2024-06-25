@@ -7,27 +7,12 @@ import { BsCart4 } from 'react-icons/bs';
 
 const products = [
   {
-      imagem:V10282,
+      imag:V10282,
       nome: "Varinha Bolinha de guizo com Pelúcia",
       medidas:"35",
-      id:10217,
+      ref:10217,
       preco: 7.54,
   },
-  {
-      imagem:V10282,
-      nome: "Varinha Bolinha de guizo",
-      medidas:"35",
-      id:10218,
-      preco: 12.97,
-  },
-  {
-      imagem:V10282,
-      nome: "guizo com Pelúcia",
-      medidas:"35",
-      id:10219,
-      preco: 5.23,
-  },
-
 ]
 
 function Products002 () {
@@ -44,15 +29,15 @@ function Products002 () {
       {
           newProducts.map((it) => (
             <ContentProd height="350px" heightImg="60%">
-                <img alt="" src={it.imagem}  />
+                <img alt="" src={it.imag}  />
                 <TextProd height="22%">
                     <b>{it.nome}</b>
                     <span>Medidas: <tt>{it.medidas}cm</tt></span>
-                    <span>Código: <tt>{it.id}</tt></span>
+                    <span>Código: <tt>{it.ref}</tt></span>
                 </TextProd>
                 <ButtonsProd>
-                    <b>Á Vista por <preco> { formatarMoeda(it.preco)} </preco> + valor do frete</b>
-                    <button onClick={() => adicionarItem(it.id, newProducts)}><CgAdd/><BsCart4/></button>
+                    <b>Á Vista por <preco> { formatarMoeda(it.preco * 1)} </preco> + valor do frete</b>
+                    <button onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd/><BsCart4/></button>
                 </ButtonsProd>
             </ContentProd>
           ))

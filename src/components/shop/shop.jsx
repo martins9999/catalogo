@@ -39,7 +39,7 @@ const Shop = ({onOff}) => {
                 {emptyCart ? '' : <vazio><BsCartX /></vazio>}
             </ContentShoppingCart>
             { emptyCart ?
-                <Total> 
+                <Total onOff={onOff}> 
                     <span>Total do Carrinho</span>  
                     <span><b>{qttItemsShop}</b> Produtos</span>  
                     <span>Valor Á Vista <b>{formatarMoeda(totalValor)}</b> + frete</span>  

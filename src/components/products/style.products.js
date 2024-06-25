@@ -24,6 +24,7 @@ export const ContainerProd = styled.div`
 }
 `;
 export const ContentProd = styled.div`
+    border-radius: 10px;
     width: 100%;
     height: ${props => props.height};
     box-sizing: border-box;
@@ -51,16 +52,12 @@ export const TextProd = styled.div`
     display: flex;
     flex-direction: column;
     padding-left: 7px;
-    gap: 5px;
 
  >span {
-    color: rgb(100,100,100);
     font-size: 12px;
+    color: #000;
     font-weight: 600;
 > tt {
-    color: #000;
-    font-size: 13px;
-    font-weight: 600;
 }
  }
 >b {
@@ -71,7 +68,7 @@ export const TextProd = styled.div`
 `;
 export const ButtonsProd = styled.div`
     width: 100%;
-    height: 20%;
+    height: 17%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

@@ -12,28 +12,28 @@ import { UseContext } from "../../context/context";
 
 const products = [
     {
-        imagem:Uz42,
-        nome: "Varinha Bolinha de guizo com Pelúcia",
-        id:10217,
-        preco: 7.54,
+        imag:Uz42,
+        nome: "",
+        ref:10217,
+        preco: '',
     },
     {
-        imagem:V10284,
-        nome: "Varinha Bolinha de guizo com Pelúcia",
-        id:10217,
-        preco: 7.54,
+        imag:V10284,
+        nome: "",
+        ref:10217,
+        preco: '',
     },
     {
-        imagem:CA10230,
-        nome: "Varinha Bolinha de guizo",
-        id:10218,
-        preco: 12.97,
+        imag:CA10230,
+        nome: "",
+        ref:10218,
+        preco: '',
     },
     {
-        imagem:KitHappyCat,
-        nome: "guizo com Pelúcia",
-        id:10219,
-        preco: 5.22,
+        imag:KitHappyCat,
+        nome: "",
+        ref:10219,
+        preco: '',
     },
   
   ]
@@ -54,11 +54,11 @@ function Home () {
             <Container>
                 {products.map((it)=>(
                     <Content>
-                        <img alt="" src={it.imagem}  />
+                        <img alt="" src={it.imag}  />
                         <b>{it.nome}</b>
                         <ButtonsProd>
                             <b>Á Vista por <preco> { formatarMoeda(it.preco)} </preco> + valor do frete</b>
-                            <button onClick={() => adicionarItem(it.id, products)}><CgAdd/><BsCart4/></button>
+                            <button onClick={() => adicionarItem(it.ref, products)}><CgAdd/><BsCart4/></button>
                         </ButtonsProd>
                     </Content>
                 ))}

@@ -33,6 +33,7 @@ export const List = styled.div`
     background-color: rgb(0,0,0,.5);
 `;
 export const Items = styled.div`
+    padding-top: 20px;
     width: 300px;
     height: 100%;
     display: flex;
