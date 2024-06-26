@@ -9,7 +9,7 @@ function Store002 () {
             <ContainerStore>
                 <ContainerBanner>   
                     <ContentText>
-
+                        <span>Produtos Diversos</span>
                     </ContentText>
                 </ContainerBanner>
                 <Products002/>

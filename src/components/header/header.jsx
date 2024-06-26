@@ -14,7 +14,7 @@ function Header () {
     const items = [
         { name:'Ínicio', link:'/' },
         { name:'Casinhas e Arranhadores', link:'/vendas1' },
-        { name:'Outros Produtos', link:'/vendas2' },
+        { name:'Produtos Diversos', link:'/vendas2' },
     ]
     const { openMenu, setOpenMenu, openShoppingCart, setOpenShoppingCart, qttItemsShop, emptyCart} = useContext(UseContext);
 

@@ -9,6 +9,7 @@ export const UseStorage = ({children}) => {
    const [shoppingCart, setShoppingCart] = useState([])
    const [qttItemsShop, setQttItemsShop] = useState()
    const [emptyCart, setEmptyCart] = useState(false)
+   const [info, setInfo] = useState(false)
    console.log(qttItemsShop)
 
    const formatarMoeda = (valor) =>{
@@ -104,6 +105,8 @@ return (
         formatarMoeda,
         emptyCart,
         qttItemsShop,
+        info,
+        setInfo
     }}>
         {children}
     </UseContext.Provider>

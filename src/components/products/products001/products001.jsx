@@ -43,9 +43,9 @@ import CA10981 from '../../../assets/casas-arranhadores/10981.png';
 import CA10983 from '../../../assets/casas-arranhadores/10983.png';
 import CA10984 from '../../../assets/casas-arranhadores/10984.png';
 import CA10985 from '../../../assets/casas-arranhadores/10985.png';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { UseContext } from '../../../context/context';
-import { ButtonsProd, ContainerProd, ContentProd, Img, TextProd, Txt } from '../style.products';
+import { ContainerINC, ContainerPIA, ContainerProd, ContentINC, ContentPIA, ContentProd, Img, Info } from '../style.products';
 import { BsCart4 } from 'react-icons/bs';
 import { CgAdd } from 'react-icons/cg';
 
@@ -61,7 +61,7 @@ const products = [
         diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10230",
-        a1:"1x Barril para gatos",
+        a1:"1x Arranhador Barril",
         a2:"não necessita montagem",
         preco:191.55,
     },
@@ -74,7 +74,7 @@ const products = [
         diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10214",
-        a1:"1x Barril para gatos",
+        a1:"1x Arranhador Berlim",
         a2:"1x manual de instruções",
         preco:260.51,
     },
@@ -87,7 +87,7 @@ const products = [
         diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10231",
-        a1:"1x Barril para gatos",
+        a1:"1x Arranhador Barril Duplo",
         a2:"não necessita montagem",
         preco:237.27,
     },
@@ -100,6 +100,7 @@ const products = [
         diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10216",
+        a1:"1x Arranhador Cairo",
         preco:204.10,
     },
     {
@@ -136,7 +137,7 @@ const products = [
         recomendado:"para gatos adultos e filhotes",
         ref:"10218",
         a1:"1x arranhador Duas Casas",
-        preco:173.47,   
+        preco:249,   
     },
     {
         imag:CA10233,
@@ -635,10 +636,10 @@ const products = [
 ]
 
 function Products001 () {
-    const [info, setInfo] = useState(false)
+
     
 
-    const { adicionarItem, formatarMoeda } = useContext(UseContext);
+    const { adicionarItem, formatarMoeda, info, setInfo } = useContext(UseContext);
 
     const newProducts = products.map((it) => {
         return {...it, preco: (it.preco * 0.15 + it.preco).toFixed(2)}
@@ -652,30 +653,30 @@ function Products001 () {
                     <Img display={info}>
                         <img alt="" src={it.imag} />
                     </Img>
-                    <Txt>
-                        <b>{it.nome}</b>
-                    </Txt>
-                    <Txt>
-                        <b>Código: {it.ref}</b>
-                    </Txt>
-                    <TextProd height="80%" display={info}>
-                        <span><tt>{it.material}</tt></span>
+                    <ContainerINC display={info}>
+                        <img alt="" src={it.imag} />
+                        <ContentINC>
+                            <b>{it.nome}</b>
+                            <b>Código: {it.ref}</b>
+                        </ContentINC>
+                    </ContainerINC>
+                    <Info height="80%" display={info}>
+                        <span>{it.material}</span>
                         <span>
-                            Medidas: <tt>C-{it.c}</tt> x <tt>L-{it.l}</tt> x <tt>A-{it.a} (cm)</tt>
+                            Medidas: C-{it.c} x L-{it.l} x A-{it.a} (cm)
                         </span>
                         <span>{it.diametroE}{it.dmE}</span>
                         <span>{it.diametroI}{it.dmI}</span>
                         <span>Recomendado: {it.recomendado}</span>
                         <span>{it.a1} {it.a2}</span>
-                    </TextProd>
-                    
-                    <ButtonsProd>
+                    </Info>
+                    <ContainerPIA>
                         <b>Á Vista por <preco> { formatarMoeda(it.preco * 1) } </preco><frete> + valor do frete</frete></b>
-                        <Txt>
+                        <ContentPIA>
                             <button1 onClick={()=>setInfo(!info)}>{info ? 'Ver Foto' : 'Informações'}</button1>
                             <button2 onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd /><BsCart4 /></button2>
-                        </Txt>
-                    </ButtonsProd>
+                        </ContentPIA>
+                    </ContainerPIA>
                 </ContentProd>
                 ))
             }

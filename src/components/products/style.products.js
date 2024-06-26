@@ -4,7 +4,7 @@ export const ContainerProd = styled.div`
     margin-top: 50px;
     width: 97%;
     display: grid;
-    background-color: #fff;
+    background-color: rgb(240,240,240);
     grid-template-columns: repeat(5, 1fr);
     row-gap: 30px;
     column-gap: 20px;
@@ -28,6 +28,7 @@ export const ContentProd = styled.div`
     width: 100%;
     height: ${props => props.height};
     box-sizing: border-box;
+    background-color: #fff;
     color: #000;
     display: flex;
     flex-direction: column;
@@ -35,58 +36,67 @@ export const ContentProd = styled.div`
     transition: .5s;
     border: rgb(90,140,90) .5px solid;
 &:hover {
-    background-color: rgb(240,240,240);
 }
 
 > img {
     width: 100%;
     height: ${props => props.heightImg ? '25%' : '73.5%'};
     border-radius: 10px;
-    padding: 7px;
     box-sizing: border-box;
 }
 `;
-export const TextProd = styled.div`
+export const ContainerINC = styled.div`
+    font-size: 15px;
+    width: 100%;
+    height: 14%;
+    padding-left: 7px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 7px;
+    >img {
+        display: ${props => props.display ? 'flex' : 'none'};
+        width: 17%;
+        height: 100%;
+    }
+
+`;
+export const ContentINC = styled.div`
+    display: flex;
+    flex-direction: column;
+
+`;
+export const Info = styled.div`
     width: 100%;
     height: ${props => props.height};
     display: ${props => props.display ? 'flex' : 'none'};
     flex-direction: column;
     padding-left: 7px;
 
- >span {
-    font-size: 12px;
-    color: #000;
-    font-weight: 600;
-> tt {
-}
- }
->b {
-    font-size: 16px;
-    color: #000; 
-}
+    >span {
+        font-size: 13.5px;
+        font-weight: 600;
+    }
 
 `;
-export const ButtonsProd = styled.div`
+export const ContainerPIA = styled.div`
     width: 100%;
-    height: 20%;
+    height: 15%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     color: blue;
     border-radius: 10px;
-
-
 >b {
-    font-size: 15px;
-    color: #000;
+    font-size: 14px;
  preco {
     color: green;
  }
  
 }
 `;
-export const Txt = styled.div`
+export const ContentPIA = styled.div`
     padding-left: 7px;
     display: flex;
     gap: 10px;

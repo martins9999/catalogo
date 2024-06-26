@@ -49,7 +49,7 @@ export const Item = styled.div`
     gap: 7px;
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: #000;
     stroke: #000;
