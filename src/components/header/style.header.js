@@ -193,8 +193,8 @@ export const ShoppingCartSvg = styled.div`
     top: 0;
     right: 0;
     background-color: red;
-    width: 22px;
-    height: 22px;
+    width: 17px;
+    height: 17px;
     border-radius: 50%;
     display: flex;
     justify-content: center;

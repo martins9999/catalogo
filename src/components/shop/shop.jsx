@@ -36,7 +36,7 @@ const Shop = ({onOff}) => {
                     </ContentItemsShoppinCart>
                     ))
                 }
-                {emptyCart ? '' : <vazio><BsCartX /></vazio>}
+                {emptyCart ? '' : <vazio>Sem Produtos <BsCartX /></vazio>}
             </ContentShoppingCart>
             { emptyCart ?
                 <Total onOff={onOff}> 

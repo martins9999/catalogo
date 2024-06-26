@@ -43,9 +43,9 @@ import CA10981 from '../../../assets/casas-arranhadores/10981.png';
 import CA10983 from '../../../assets/casas-arranhadores/10983.png';
 import CA10984 from '../../../assets/casas-arranhadores/10984.png';
 import CA10985 from '../../../assets/casas-arranhadores/10985.png';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { UseContext } from '../../../context/context';
-import { ButtonsProd, ContainerProd, ContentProd, TextProd } from '../style.products';
+import { ButtonsProd, ContainerProd, ContentProd, Img, TextProd, Txt } from '../style.products';
 import { BsCart4 } from 'react-icons/bs';
 import { CgAdd } from 'react-icons/cg';
 
@@ -57,8 +57,8 @@ const products = [
         nome:"Arranhador Barril",
         material:"Material: MDF,pelúcia,sisal e manta de juta",
         c:"40",l:"40",a:"49",
-        diamTextE:"Diâmetro dos orificios exteriores: ", diamE:"18cm",
-        diamTextI:"Diâmetro do orificio interior: ", diamI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10230",
         a1:"1x Barril para gatos",
@@ -70,8 +70,8 @@ const products = [
         nome:"Arranhador Berlim",
         material:"Material: MDF,pelúcia e sisal",
         c:"48",l:"48",a:"120",
-        diametroE:"Diâmetro dos orificios exteriores: 18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10214",
         a1:"1x Barril para gatos",
@@ -83,8 +83,8 @@ const products = [
         nome:"Arranhador Barril Duplo",
         material:"Material: MDF,pelúcia,sisal e manta de juta",
         c:"40",l:"40",a:"74",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10231",
         a1:"1x Barril para gatos",
@@ -96,8 +96,8 @@ const products = [
         nome:"Arranhador Cairo",
         material:"Material: MDF,pelúcia e sisal",
         c:"34",l:"98",a:"45",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10216",
         preco:204.10,
@@ -107,8 +107,8 @@ const products = [
         nome:"Arranhador Castelo",
         material:"Material: MDF,pelúcia,sisal e manta de juta",
         c:"75",l:"39",a:"104",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10224",
         a1:"1x arranhador castelo para gato",
@@ -119,8 +119,8 @@ const products = [
        nome:"Arranhador Luanda",
         material:"Material: MDF,pelúcia,sisal e manta de juta",
         c:"40",l:"48",a:"120",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10222",
         a1:"1x arranhador Luanda",
@@ -131,8 +131,8 @@ const products = [
        nome:"Arranhador Duas Casas",
         material:"Material: MDF,pelúcia e sisal",
         c:"36",l:"55",a:"59",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10218",
         a1:"1x arranhador Duas Casas",
@@ -143,8 +143,8 @@ const products = [
        nome:"Arranhador Castelo com Torre",
         material:"Material: MDF,pelúcia e sisal",
         c:"85",l:"70",a:"115",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10233",
         a1:"1x arranhador Castelo com Torre",
@@ -155,8 +155,8 @@ const products = [
        nome:"Arranhador Houston",
         material:"Material: MDF,pelúcia e sisal",
         c:"30",l:"50",a:"80",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10232",
         a1:"1x arranhador Houston",
@@ -169,8 +169,8 @@ const products = [
        nome:"Arranhador Madrid",
         material:"Material: MDF,pelúcia,sisal e manta de juta",
         c:"60",l:"40",a:"81",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10223",
         a1:"1x arranhador Madrid",
@@ -182,8 +182,8 @@ const products = [
        nome:"Arranhador Montevidéo",
         material:"Material: MDF,pelúcia e sisal",
         c:"35",l:"48",a:"100",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10215",
         a1:"1x arranhador Montevidéo",
@@ -195,8 +195,8 @@ const products = [
        nome:"Arranhador Topázio",
         material:"Material: MDF,pelúcia e sisal",
         c:"30",l:"41",a:"58",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10225",
         a1:"1x arranhador Topázio",
@@ -208,8 +208,8 @@ const products = [
        nome:"Arranhador Irwin",
         material:"Material: MDF,pelúcia e sisal",
         c:"58",l:"48",a:"110",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10234",
         a1:"1x arranhador Irwin",
@@ -221,8 +221,8 @@ const products = [
        nome:"Arranhador Vênus",
         material:"Material: MDF,pelúcia,sisal e manta de juta",
         c:"30",l:"30",a:"50",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10219",
         a1:"1x arranhador Vênus",
@@ -234,8 +234,8 @@ const products = [
        nome:"Arranhador Turin",
         material:"Material: MDF,pelúcia e sisal",
         c:"36",l:"55",a:"59",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10220",
         a1:"1x arranhador Turin",
@@ -247,8 +247,8 @@ const products = [
        nome:"Arranhador Napoles ",
         material:"Material: MDF,pelúcia e sisal",
         c:"58",l:"48",a:"110",
-        diametroE:"18cm",
-        diametroI:"18cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"18cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"18cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10235",
         a1:"1x arranhador Napoles",
@@ -260,8 +260,8 @@ const products = [
        nome:"Arranhador Ninho ",
         material:"Material: MDF,pelúcia e sisal",
         c:"60",l:"60",a:"93",
-        diametroE:"20x28cm",
-        diametroI:"22cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x28cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"22cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10236",
         a1:"1x arranhador Ninho",
@@ -273,8 +273,8 @@ const products = [
        nome:"Arranhador Olimpus ",
         material:"Material: MDF,pelúcia e sisal",
         c:"60",l:"50",a:"120",
-        diametroE:"40x30cm",
-        diametroI:"22cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"40x30cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"22cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10981",
         a1:"1x arranhador Olimpus",
@@ -286,8 +286,8 @@ const products = [
        nome:"Arranhador Aconchego ",
         material:"Material: MDF,pelúcia e sisal",
         c:"30",l:"40",a:"60",
-        diametroE:"20x20cm",
-        diametroI:"22cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"22cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10213",
         a1:"1x arranhador Aconchego",
@@ -299,8 +299,8 @@ const products = [
        nome:"Arranhador Kioto ",
         material:"Material: MDF,pelúcia e sisal",
         c:"30",l:"40",a:"60",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10237",
         a1:"1x arranhador Kioto",
@@ -312,8 +312,8 @@ const products = [
        nome:"Arranhador Tokyo ",
         material:"Material: MDF,pelúcia e sisal",
         c:"50",l:"50",a:"100",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10984",
         a1:"1x arranhador Tokyo",
@@ -321,12 +321,25 @@ const products = [
     },
 
     {
+        imag:CA10195,
+       nome:"Arranhador Buzios ",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"50",l:"50",a:"100",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10195",
+        a1:"1x arranhador Buzios",
+        preco:219.25,   
+    },
+
+    {
         imag:CA10238,
        nome:"Arranhador Tunisia ",
         material:"Material: MDF,pelúcia e sisal",
         c:"50",l:"70",a:"114",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10238",
         a1:"1x arranhador Tunisia",
@@ -338,8 +351,8 @@ const products = [
        nome:"Arranhador Bangkok ",
         material:"Material: MDF,pelúcia e sisal",
         c:"48",l:"48",a:"100",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10239",
         a1:"1x arranhador Bangkok",
@@ -351,8 +364,8 @@ const products = [
        nome:"Arranhador Catedral",
         material:"Material: MDF,pelúcia e sisal",
         c:"48",l:"48",a:"104",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10240",
         a1:"1x arranhador Catedral",
@@ -364,8 +377,8 @@ const products = [
        nome:"Arranhador Tirruana",
         material:"Material: MDF,pelúcia e sisal",
         c:"73",l:"48",a:"50",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10241",
         a1:"1x arranhador Tirruana",
@@ -377,8 +390,8 @@ const products = [
        nome:"Arranhador Jumping",
         material:"Material: MDF,pelúcia e sisal",
         c:"39",l:"39",a:"114",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10242",
         a1:"1x arranhador Jumping",
@@ -386,14 +399,14 @@ const products = [
     },
 
     {
-        imag:CA10195,
+        imag:CA10196,
        nome:"Arranhador Boston",
         material:"Material: MDF,pelúcia e sisal",
         c:"30",l:"40",a:"60",
-        diametroE:"20x20cm",
-        diametroI:"30cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"30cm",
         recomendado:"para gatos adultos e filhotes",
-        ref:"10195",
+        ref:"10196",
         a1:"1x arranhador Boston",
         preco:141.09,   
     },
@@ -403,8 +416,8 @@ const products = [
        nome:"Arranhador Lisboa",
         material:"Material: MDF,pelúcia e sisal",
         c:"39",l:"39",a:"114",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10243",
         a1:"1x arranhador Lisboa",
@@ -416,8 +429,8 @@ const products = [
         nome:"Arranhador Tunel",
         material:"Material: MDF,pelúcia e sisal",
         c:"35",l:"60",a:"55",
-        diametroE:"20x20cm",
-        diametroI:"20cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"20cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10244",
         a1:"1x arranhador Tunel",
@@ -429,8 +442,8 @@ const products = [
        nome:"Arranhador Casa Coqueiro",
         material:"Material: MDF,pelúcia e sisal",
         c:"40",l:"55",a:"89",
-        diametroE:"20x17cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x17cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10245",
         a1:"1x arranhador Casa Coqueiro",
@@ -442,8 +455,8 @@ const products = [
        nome:"Arranhador Casinha",
         material:"Material: MDF,pelúcia e sisal",
         c:"35",l:"60",a:"45",
-        diametroE:"20x20cm",
-        diametroI:"30cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"30cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10246",
         a1:"1x arranhador Casinha",
@@ -455,16 +468,175 @@ const products = [
        nome:"Arranhador Barcelona",
         material:"Material: MDF,pelúcia e sisal",
         c:"41",l:"70",a:"112",
-        diametroE:"20x20cm",
-        diametroI:"35cm",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
         recomendado:"para gatos adultos e filhotes",
         ref:"10247",
         a1:"1x arranhador Barcelona",
         preco:264.16,   
     },
+
+    {
+        imag:CA10248,
+       nome:"Arranhador Torre",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"45",l:"45",a:"91",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"Não possui",
+        diametroI:"Diâmetro da cama circular superior: ", dmI:"35*45cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10247",
+        a1:"1x arranhador torre",
+        preco:127.57,   
+    },
+    
+    {
+        imag:CA10192,
+        nome:"Arranhador Peruibe",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"40",l:"40",a:"50",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"40x20cm",
+        diametroI:"Diâmetro da cama superior: ", dmI:"35cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10192",
+        a1:"1x arranhador Peruibe",
+        preco:77.48,   
+    },
+    
+    {
+        imag:CA10249,
+        nome:"Arranhador Escada Com Toca",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"35",l:"60",a:"45",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"30cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10249",
+        a1:"1x arranhador Escada Com Toca",
+        preco:256.47,   
+    },
+    
+    {
+        imag:CA10193,
+        nome:"Arranhador Atalanta",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"41",l:"70",a:"112",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10193",
+        a1:"1x arranhador Atalanta",
+        preco:79.13,   
+    },
+    
+    {
+        imag:CA10250,
+        nome:"Arranhador Nikko",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"43",l:"39",a:"50",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"Não Possui",
+        diametroI:"Diâmetro das bases elevadas: ", dmI:"35cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10250",
+        a1:"1x arranhador Nikko",
+        preco:120.73,   
+    },
+    
+    {
+        imag:CA10203,
+        nome:"Arranhador Oklahoma",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"30",l:"50",a:"80",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro da cama suspensa: ", dmI:"30cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10203",
+        a1:"1x arranhador Oklahoma",
+        preco:200.89,   
+    },
+
+    
+    {
+        imag:CA10251,
+        nome:"Bogotá",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"40",l:"40",a:"60",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
+        diametroI:"Diâmetro da cama suspensa: ", dmI:"30cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10251",
+        a1:"1x arranhador Bogotá",
+        preco:148.92,   
+    },
+   
+    {
+        imag:CA10198,
+        nome:"Arranhador Patinhas",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"40",l:"40",a:"50",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"Não Possui",
+        diametroI:"Diâmetro da cama suspensa: ", dmI:"40cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10198",
+        a1:"1x arranhador Patinhas",
+        preco:73.30,   
+    },
+
+    {
+        imag:CA10983,
+        nome:"Arranhador Chicago",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"36",l:"60",a:"120",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"Não Possui",
+        diametroI:"Diâmetro da cama suspensa: ", dmI:"22cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10983",
+        a1:"1x arranhador Chicago",
+        preco:183.49,   
+    },
+
+    {
+        imag:CA10200,
+        nome:"Arranhador Burj Khalifa",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"40",l:"60",a:"170",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"Não Possui",
+        diametroI:"Diâmetro da casa superior: ", dmI:"40cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10200",
+        a1:"1x arranhador Burj Khalifa",
+        preco:540.09,   
+    },
+    
+    {
+        imag:CA10985,
+        nome:"Arranhador Haren",
+        material:"Sem informações",
+        c:"xx",l:"xx",a:"xx",
+        diametroE:"", dmE:"",
+        diametroI:"", dmI:"",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10985",
+        a1:"1x arranhador Haren",
+        preco:674.62,   
+    },
+
+    {
+        imag:CA10202,
+        nome:"Arranhador Londres",
+        material:"Material: MDF,pelúcia e sisal",
+        c:"120",l:"50",a:"180",
+        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"35cm",
+        diametroI:"Diâmetro da toquinha: ", dmI:"40cm",
+        recomendado:"para gatos adultos e filhotes",
+        ref:"10202",
+        a1:"1x arranhador Londres",
+        preco:1015.85,   
+    },
 ]
 
 function Products001 () {
+    const [info, setInfo] = useState(false)
+    
 
     const { adicionarItem, formatarMoeda } = useContext(UseContext);
 
@@ -476,23 +648,33 @@ function Products001 () {
         <ContainerProd>
             {
                 newProducts.map(it => (
-                <ContentProd height="385px" heightImg="47%">
-                    <img alt="" src={it.imag} />
-                    <TextProd height="36%">
+                <ContentProd height="390px">
+                    <Img display={info}>
+                        <img alt="" src={it.imag} />
+                    </Img>
+                    <Txt>
                         <b>{it.nome}</b>
+                    </Txt>
+                    <Txt>
+                        <b>Código: {it.ref}</b>
+                    </Txt>
+                    <TextProd height="80%" display={info}>
                         <span><tt>{it.material}</tt></span>
                         <span>
-                            <tt>Medidas: C-{it.c}</tt> x <tt>L-{it.l}</tt> x <tt>A-{it.a} (cm)</tt>
+                            Medidas: <tt>C-{it.c}</tt> x <tt>L-{it.l}</tt> x <tt>A-{it.a} (cm)</tt>
                         </span>
-                        <span><tt>{it.diamTextE}{it.diamE}</tt></span>
-                        <span><tt>{it.diamTextI}{it.diamI}</tt></span>
-                        <span><tt>Recomendado: {it.recomendado}</tt></span>
-                        <span>Código: <tt>{it.ref}</tt></span>
-                        <span>{it.a1}</span>
+                        <span>{it.diametroE}{it.dmE}</span>
+                        <span>{it.diametroI}{it.dmI}</span>
+                        <span>Recomendado: {it.recomendado}</span>
+                        <span>{it.a1} {it.a2}</span>
                     </TextProd>
+                    
                     <ButtonsProd>
                         <b>Á Vista por <preco> { formatarMoeda(it.preco * 1) } </preco><frete> + valor do frete</frete></b>
-                        <button onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd /><BsCart4 /></button>
+                        <Txt>
+                            <button1 onClick={()=>setInfo(!info)}>{info ? 'Ver Foto' : 'Informações'}</button1>
+                            <button2 onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd /><BsCart4 /></button2>
+                        </Txt>
                     </ButtonsProd>
                 </ContentProd>
                 ))

@@ -40,7 +40,7 @@ export const ContentProd = styled.div`
 
 > img {
     width: 100%;
-    height: ${props => props.heightImg};
+    height: ${props => props.heightImg ? '25%' : '73.5%'};
     border-radius: 10px;
     padding: 7px;
     box-sizing: border-box;
@@ -49,7 +49,7 @@ export const ContentProd = styled.div`
 export const TextProd = styled.div`
     width: 100%;
     height: ${props => props.height};
-    display: flex;
+    display: ${props => props.display ? 'flex' : 'none'};
     flex-direction: column;
     padding-left: 7px;
 
@@ -68,7 +68,7 @@ export const TextProd = styled.div`
 `;
 export const ButtonsProd = styled.div`
     width: 100%;
-    height: 17%;
+    height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -76,30 +76,63 @@ export const ButtonsProd = styled.div`
     color: blue;
     border-radius: 10px;
 
- > button {
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    padding: 2px 10px;
-    background-color: green;
-    color: #fff;
-    font-size: 14px;
-    display: flex;
-    font-weight: 600;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-   > svg {
-        width: 17px;
-        height: 17px;
-   }
- }
+
 >b {
-    font-size: 16px;
-    color: rgb(90,90,90);
+    font-size: 15px;
+    color: #000;
  preco {
     color: green;
  }
  
 }
+`;
+export const Txt = styled.div`
+    padding-left: 7px;
+    display: flex;
+    gap: 10px;
+    > button2 {
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        padding: 2px 10px;
+        background-color: green;
+        color: #fff;
+        font-size: 14px;
+        display: flex;
+        font-weight: 600;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        >svg {
+                width: 17px;
+                height: 17px;
+        }
+    }
+> button1 {
+    background-color: blue;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    padding: 2px 0;
+    border-radius: 7px;
+    color: #fff;
+    cursor: pointer;
+}
+> b {
+    font-size: 15px;
+}
+`;
+export const Img = styled.div`
+    width: 100%;
+    height: 70%;
+    display: ${props => props.display ? 'none' : 'flex'};
+    > img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        padding: 7px;
+        box-sizing: border-box;
+    }
 `;

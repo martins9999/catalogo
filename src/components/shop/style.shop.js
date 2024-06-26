@@ -28,16 +28,26 @@ export const ContentShoppingCart = styled.div`
     box-sizing: border-box;
 
     >vazio {
-        font-size: 100px;
+        font-size: 70px;
+        font-weight: 900;
         width: 100%;
         height: calc(100vh - 100px);
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         color: red;
+        > svg {
+            width: 150px;
+            height: 150px;
+        }
     }
 
-
+    @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
+        vazio {
+            font-size: 50px;
+        }
+    }
 `;
 export const ContentItemsShoppinCart = styled.div`
     width: 100%;
@@ -77,8 +87,12 @@ export const TextShoppinCart = styled.div`
     >i {
         background-color: red;
         color: #fff;
-        padding: 1.5px 6px;
+        width: 17px;
+        height: 17px;
         border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     >svg {
         width: 20px;
@@ -104,24 +118,6 @@ export const TextShoppinCart = styled.div`
 }
 @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
     width: 80%;
-}
-`;
-export const ButtonsShoppingCart = styled.div`
-    width: 100%;
-    height: 16%;
-
-> button {
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    padding: 2px 8px;
-    background-color: red;
-    color: #fff;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
 }
 `;
 export const Total = styled.div`
