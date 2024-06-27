@@ -83,8 +83,12 @@ function Home () {
     const { adicionarItem, formatarMoeda, setOpenMenu, info, setInfo  } = useContext(UseContext);
 
     const newProducts = products.map((it) => {
-        return {...it, preco: (it.preco * 0.15 + it.preco).toFixed(2)}
-      })
+        return {
+            ...it, preco: (it.preco * 0.15 + it.preco).toFixed(2),
+            precoPix: ((it.preco * 0.15 + it.preco) - (it.preco *  0.15 + it.preco) * 0.05).toFixed(2)
+        }
+        
+    })
 
 
     return (

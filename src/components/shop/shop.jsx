@@ -9,15 +9,19 @@ import { RiDeleteBinLine } from "react-icons/ri";
 const Shop = ({onOff}) => {
     const { shoppingCart, adicionarItem, removerItem, emptyCart, formatarMoeda, limparCarrinho, qttItemsShop} = useContext(UseContext);
 
-    const totalValor = shoppingCart.reduce((acc, item) => 
-        item.quantity * item.product.preco + acc, 0
+    const totalValor = shoppingCart.reduce((acc, it) => 
+        it.quantity * it.product.preco + acc, 0
 )
+    const precoPix = shoppingCart.reduce((acc, it) => 
+        (it.quantity * it.product.preco - (it.quantity * it.product.preco * 0.05).toFixed(2) + acc) , 0
+)
+
 
     
     return (
         <>
         <ContainerShoppingCart onOff={onOff}>
-            <ContentShoppingCart onOff={onOff}>
+            <ContentShoppingCart onOff={onOff} emptyCart={emptyCart}>
                 {
                     shoppingCart.map((item) => (
                     <ContentItemsShoppinCart>
@@ -42,7 +46,7 @@ const Shop = ({onOff}) => {
                 <Total onOff={onOff}> 
                     <span>Total do Carrinho</span>  
                     <span><b>{qttItemsShop}</b> Produtos</span>  
-                    <span>Valor Á Vista <b>{formatarMoeda(totalValor)}</b> + frete</span>  
+                    <span>Á Vista <b>{formatarMoeda(totalValor)}</b> ou no Pix <b>{formatarMoeda(precoPix)}</b> + frete</span>
                     <button onClick={()=>{limparCarrinho()}}>Limpar <RiDeleteBinLine/><BsCartX/></button>   
                 </Total>
             :''}

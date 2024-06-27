@@ -173,20 +173,17 @@ export const X = styled.div`
 export const ShoppingCartSvg = styled.div`
     width: 60px;
     height: 50px;
-    margin-right: 20px;
     font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     left: 50px;
+    animation: ${props => props.emptyCart ? 'rot 5s infinite linear' : ''};
 > svg {
     width: 32px;
     height: 32px;
-&:hover {
-    color: yellow;
     cursor: pointer;
-}
 }
 > span {
     position: absolute;
@@ -199,6 +196,17 @@ export const ShoppingCartSvg = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@keyframes rot {
+    0% {
+        color: greenyellow;
+    }
+    50% {
+        color: yellow;
+    }
+    100% {
+        color: cyan;
+    }
 }
 
 `;

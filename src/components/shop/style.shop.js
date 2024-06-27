@@ -7,20 +7,18 @@ export const ContainerShoppingCart = styled.div`
     height: calc(100vh - 50px);
     left: ${ props => props.onOff ? '0' : '-100%'};
     height: calc(100vh - 50px);
-    background-color: rgb(0,0,0,.5);
-    overflow-x: hidden;
-    overflow-y: auto;
+    background-color: #fff;
 @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
     width: 100%;
 }
 `;
 
 export const ContentShoppingCart = styled.div`
-    position: absolute;
+    position: relative;
+    overflow-y: auto;
+    height: calc(100vh - 190px);
     width: 100%;
-    min-height: calc(100vh - 50px);
     left: ${ props => props.onOff ? '0' : '-100%'};
-    background-color: rgb(250,255,250);
     display: flex;
     flex-direction: column;
     padding: 8px;
@@ -60,7 +58,7 @@ export const ContentItemsShoppinCart = styled.div`
     transition: .5s;
 
 > img {
-    width: 20%;
+    width: 25%;
     height: 100%;
     border-radius: 10px;
     padding: 7px;
@@ -121,15 +119,12 @@ export const TextShoppinCart = styled.div`
 }
 `;
 export const Total = styled.div`
-    position: fixed;
-    left: ${ props => props.onOff ? '0' : '-100%'};
-    bottom: 0;
-    width: 30%;
+    width: 100%;
+    height: 140px;
     padding: 8px 0;
     background-color: rgb(250,250,250);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     font-size: 13px;
     gap: 2px;

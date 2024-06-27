@@ -49,7 +49,7 @@ function Header () {
                 </List>
                 <Shop onOff={openShoppingCart}/>
 
-                <ShoppingCartSvg>
+                <ShoppingCartSvg emptyCart={emptyCart}>
                     {openMenu ?
                         '':
                         openShoppingCart ?
