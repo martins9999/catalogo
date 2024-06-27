@@ -1,50 +1,78 @@
 import { Barra, Button, HomeContainer} from "./style.home";
-import CA10202 from '../../assets/casas-arranhadores/10202.png';
-import CA10198 from '../../assets/casas-arranhadores/10198.png';
-import CA10193 from '../../assets/casas-arranhadores/10193.png';
+import CA10196 from '../../assets/casas-arranhadores/10196.png';
+import CA10225 from '../../assets/casas-arranhadores/10225.png';
+import CA10234 from '../../assets/casas-arranhadores/10234.png';
+import CA10219 from '../../assets/casas-arranhadores/10219.png';
+import CA10232 from '../../assets/casas-arranhadores/10232.png';
 import { ContainerBanner, ContentText } from "../../components/banner.style/style.banner";
 import { CgAdd } from "react-icons/cg";
 import { BsCart4 } from "react-icons/bs";
 import { useContext } from "react";
 import { UseContext } from "../../context/context";
-import { ContainerINC, ContainerPIA, ContainerProd, ContentINC, ContentPIA, ContentProd, Img, Info } from "../../components/products/style.products";
+import { ContainerINC, ContainerPIA, ContainerProd, ContentINC, ContentPIA, ContentProd, Info } from "../../components/products/style.products";
 
 const products = [
     {
-        imag:CA10202,
-        nome:"Arranhador Londres",
+        imag:CA10196,
+        nome:"Arranhador Boston",
         material:"Material: MDF,pelúcia e sisal",
-        c:"120",l:"50",a:"180",
-        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"35cm",
-        diametroI:"Diâmetro da toquinha: ", dmI:"40cm",
-        recomendado:"para gatos adultos e filhotes",
-        ref:"10202",
-        a1:"1x arranhador Londres",
-        preco:1015.85,   
+        medidas:"Medidas: (C:30)x(L:40)x(A:60)Cm",
+        diametroE:"Diâmetro dos orifícios exteriores: 20x20Cm",
+        diametroI:"Diâmetro do orificio circular do interior: 30Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10196",
+        a1:"1x arranhador Boston",
+        preco:141.09,   
     },
     {
-        imag:CA10198,
-        nome:"Arranhador Patinhas",
+        imag:CA10225,
+        nome:"Arranhador Topázio",
         material:"Material: MDF,pelúcia e sisal",
-        c:"40",l:"40",a:"50",
-        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"Não Possui",
-        diametroI:"Diâmetro da cama suspensa: ", dmI:"40cm",
-        recomendado:"para gatos adultos e filhotes",
-        ref:"10198",
-        a1:"1x arranhador Patinhas",
-        preco:73.30,   
+        medidas:"Medidas: (C:30)x(L:41)x(A:58)Cm",
+        diametroE:"Diâmetro dos orifícios exteriores: 18Cm",
+        diametroI:"Diâmetro do orificio circular do interior: 18Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10225",
+        a1:"1x arranhador Topázio",
+        preco:123.84,   
+    },
+    
+    {
+        imag:CA10234,
+       nome:"Arranhador Irwin",
+        material:"Material: MDF,pelúcia e sisal",
+        medidas:"Medidas: (C:58)x(L:48)x(A:110)Cm",
+        diametroE:"Diâmetro dos orifícios exteriores: 18Cm",
+        diametroI:"Diâmetro do orificio circular do interior: 18Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10234",
+        a1:"1x arranhador Irwin",
+        preco:353.75,   
+    },
+
+    {
+        imag:CA10219,
+       nome:"Arranhador Vênus",
+        material:"Material: MDF,pelúcia,sisal e manta de juta",
+        medidas:"Medidas: (C:30)x(L:30)x(A:50)Cm",
+        diametroE:"Diâmetro dos orifícios exteriores: 18Cm",
+        diametroI:"Diâmetro do orificio circular do interior: 18Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10219",
+        a1:"1x arranhador Vênus",
+        preco:89.51,   
     },
     {
-        imag:CA10193,
-        nome:"Arranhador Atalanta",
+        imag:CA10232,
+       nome:"Arranhador Houston",
         material:"Material: MDF,pelúcia e sisal",
-        c:"41",l:"70",a:"112",
-        diametroE:"Diâmetro dos orifícios exteriores: ", dmE:"20x20cm",
-        diametroI:"Diâmetro do orificio circular do interior: ", dmI:"35cm",
-        recomendado:"para gatos adultos e filhotes",
-        ref:"10193",
-        a1:"1x arranhador Atalanta",
-        preco:79.13,   
+        medidas:"Medidas: (C:30)x(L:50)x(A:80)Cm",
+        diametroE:"Diâmetro dos orifícios exteriores: 18Cm",
+        diametroI:"Diâmetro do orificio circular do interior: 18Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10232",
+        a1:"1x arranhador Houston",
+        preco:142.50,   
     },
   
   ]
@@ -69,35 +97,30 @@ function Home () {
             <ContainerProd>
                 {
                     newProducts.map(it => (
-                    <ContentProd height="390px">
-                        <Img display={info}>
-                            <img alt="" src={it.imag} />
-                        </Img>
-                        <ContainerINC display={info}>
-                            <img alt="" src={it.imag} />
-                            <ContentINC>
-                                <b>{it.nome}</b>
-                                <b>Código: {it.ref}</b>
-                            </ContentINC>
-                        </ContainerINC>
-                        <Info height="80%" display={info}>
-                            <span>{it.material}</span>
-                            <span>
-                                Medidas: C-{it.c} x L-{it.l} x A-{it.a} (cm)
-                            </span>
-                            <span>{it.diametroE}{it.dmE}</span>
-                            <span>{it.diametroI}{it.dmI}</span>
-                            <span>Recomendado: {it.recomendado}</span>
-                            <span>{it.a1} {it.a2}</span>
-                        </Info>
-                        <ContainerPIA>
-                            <b>Á Vista por <preco> { formatarMoeda(it.preco * 1) } </preco><frete> + valor do frete</frete></b>
-                            <ContentPIA>
-                                <button1 onClick={()=>setInfo(!info)}>{info ? 'Ver Foto' : 'Informações'}</button1>
-                                <button2 onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd /><BsCart4 /></button2>
-                            </ContentPIA>
-                        </ContainerPIA>
-                    </ContentProd>
+                        <ContentProd height="390px">
+                            <ContainerINC info={info}>
+                                <img alt="" src={it.imag} />
+                                <ContentINC>
+                                    <b>{it.nome}</b>
+                                    <b>{it.ref}</b>
+                                </ContentINC>
+                            </ContainerINC>
+                            <Info height="68%" info={info}>
+                                <span>{it.material}</span>
+                                <span>{it.medidas}</span>
+                                <span>{it.diametroE}</span>
+                                <span>{it.diametroI}</span>
+                                <span>{it.recomendado}</span>
+                                <span>{it.a1} {it.a2}</span>
+                            </Info>
+                            <ContainerPIA>
+                                <b>Á Vista por <preco> { formatarMoeda(it.preco * 1) } </preco><frete> + valor do frete</frete></b>
+                                <ContentPIA>
+                                    <button1 onClick={()=>setInfo(!info)}>{info ? 'Ver Foto' : 'Informações'}</button1>
+                                    <button2 onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd />Adicionar<BsCart4 /></button2>
+                                </ContentPIA>
+                            </ContainerPIA>
+                        </ContentProd>
                     ))
                 }
             </ContainerProd>

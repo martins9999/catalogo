@@ -1,7 +1,7 @@
 import V10282 from '../../../assets/brinquedos-acessorios/v-10282.jpg';
 import { useContext } from 'react';
 import { UseContext } from '../../../context/context';
-import { ContainerINC, ContainerPIA, ContainerProd, ContentINC, ContentPIA, ContentProd, Img, Info } from '../style.products';
+import { ContainerINC, ContainerPIA, ContainerProd, ContentINC, ContentPIA, ContentProd, Info } from '../style.products';
 import { CgAdd } from 'react-icons/cg';
 import { BsCart4 } from 'react-icons/bs';
 
@@ -28,31 +28,27 @@ function Products002 () {
         <ContainerProd>
             {
                 newProducts.map(it => (
-                <ContentProd height="390px">
-                    <Img display={info}>
-                        <img alt="" src={it.imag} />
-                    </Img>
-                    <ContainerINC display={info}>
+                    <ContentProd height="390px">
+                    <ContainerINC info={info}>
                         <img alt="" src={it.imag} />
                         <ContentINC>
                             <b>{it.nome}</b>
-                            <b>Código: {it.ref}</b>
+                            <b>{it.ref}</b>
                         </ContentINC>
                     </ContainerINC>
-                    <Info height="80%" display={info}>
+                    <Info height="68%" info={info}>
                         <span>{it.material}</span>
-                        <span>
-                            Medidas: {it.medidas}
-                        </span>
-                        <span>{it.diametroE}{it.dmE}</span>
-                        <span>{it.diametroI}{it.dmI}</span>
+                        <span>{it.medidas}</span>
+                        <span>{it.diametroE}</span>
+                        <span>{it.diametroI}</span>
+                        <span>{it.recomendado}</span>
                         <span>{it.a1} {it.a2}</span>
                     </Info>
                     <ContainerPIA>
                         <b>Á Vista por <preco> { formatarMoeda(it.preco * 1) } </preco><frete> + valor do frete</frete></b>
                         <ContentPIA>
                             <button1 onClick={()=>setInfo(!info)}>{info ? 'Ver Foto' : 'Informações'}</button1>
-                            <button2 onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd /><BsCart4 /></button2>
+                            <button2 onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd />Adicionar<BsCart4 /></button2>
                         </ContentPIA>
                     </ContainerPIA>
                 </ContentProd>

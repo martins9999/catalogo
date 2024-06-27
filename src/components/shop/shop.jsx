@@ -28,7 +28,7 @@ const Shop = ({onOff}) => {
                             <span>Preço da unidade: <preco>{formatarMoeda(item.product.preco * 1)} </preco></span>
                             <span>Quantidade: 
                                 <CgRemove onClick={() => removerItem(item.product.ref)}/>
-                                <i>{item.quantity}</i>
+                                <spann>{item.quantity}</spann>
                                 <CgAdd onClick={() => adicionarItem(item.product.ref, shoppingCart)}/>
                             </span>
                             <b>Total:<preco> {formatarMoeda(item.quantity * item.product.preco)} </preco></b>

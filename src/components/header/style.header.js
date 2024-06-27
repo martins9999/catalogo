@@ -171,10 +171,10 @@ export const X = styled.div`
     justify-content: flex-end;
 `;
 export const ShoppingCartSvg = styled.div`
-    width: 50px;
+    width: 60px;
     height: 50px;
     margin-right: 20px;
-    font-size: 16px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,11 +190,11 @@ export const ShoppingCartSvg = styled.div`
 }
 > span {
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 0;
     background-color: red;
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: flex;
     justify-content: center;

@@ -84,16 +84,16 @@ export const TextShoppinCart = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
-    >i {
-        background-color: red;
-        color: #fff;
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    > spann {
+    background-color: red;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
     >svg {
         width: 20px;
         height: 20px;

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const ContainerProd = styled.div`
+    border-radius: 10px;
     margin-top: 50px;
     width: 97%;
     display: grid;
-    background-color: rgb(240,240,240);
+    background-color: rgb(200,200,200);
     grid-template-columns: repeat(5, 1fr);
     row-gap: 30px;
     column-gap: 20px;
@@ -19,7 +20,7 @@ export const ContainerProd = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
 }
 `;
@@ -28,12 +29,10 @@ export const ContentProd = styled.div`
     width: 100%;
     height: ${props => props.height};
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: rgb(255,255,255);
     color: #000;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    transition: .5s;
     border: rgb(90,140,90) .5px solid;
 &:hover {
 }
@@ -48,16 +47,16 @@ export const ContentProd = styled.div`
 export const ContainerINC = styled.div`
     font-size: 15px;
     width: 100%;
-    height: 14%;
-    padding-left: 7px;
-    padding-top: 7px;
+    height: ${props => props.info ? '17%' : '85%'};
+    flex-direction: ${props => props.info ? 'row' : 'column'};
+    padding: ${props => props.info ? '6px' : '6px 6px 0 6px'};
+    gap: ${props => props.info ? '6px' : '0'};
     box-sizing: border-box;
     display: flex;
-    gap: 7px;
     >img {
-        display: ${props => props.display ? 'flex' : 'none'};
-        width: 17%;
-        height: 100%;
+        border-radius: 10px;
+        width: ${props => props.info ? '25%' : '100%'};
+        height: ${props => props.info ? '100%' : '87%'};
     }
 
 `;
@@ -69,32 +68,47 @@ export const ContentINC = styled.div`
 export const Info = styled.div`
     width: 100%;
     height: ${props => props.height};
-    display: ${props => props.display ? 'flex' : 'none'};
+    display: ${props => props.info ? 'flex' : 'none'};
     flex-direction: column;
     padding-left: 7px;
+    gap: 5px;
 
     >span {
         font-size: 13.5px;
         font-weight: 600;
     }
+    /* >b {
+        color: blue;
+        font-size: 14px;
+        preco {
+            color: green;
+        }
+    } */
 
 `;
 export const ContainerPIA = styled.div`
     width: 100%;
-    height: 15%;
+    height: ${props => props.info ? '15%' : '15%'};
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    color: blue;
     border-radius: 10px;
->b {
     font-size: 14px;
- preco {
-    color: green;
- }
- 
-}
+    font-weight: 700;
+    /* >b {
+        color: blue;
+        display: ${props => props.info ? 'flex' : 'none'};
+        preco {
+            color: green;
+        }
+    } */
+    >b {
+        color: blue;
+        preco {
+            color: green;
+        }
+    }
 `;
 export const ContentPIA = styled.div`
     padding-left: 7px;
@@ -133,16 +147,4 @@ export const ContentPIA = styled.div`
 > b {
     font-size: 15px;
 }
-`;
-export const Img = styled.div`
-    width: 100%;
-    height: 70%;
-    display: ${props => props.display ? 'none' : 'flex'};
-    > img {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        padding: 7px;
-        box-sizing: border-box;
-    }
 `;

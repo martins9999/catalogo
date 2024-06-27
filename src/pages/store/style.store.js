@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const PageStorie = styled.div`
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(#87ceeb, #e0f6ff);
+    background-color: rgb(50,80,200);
 `;
 export const ContainerStore = styled.div`
     width: 100%;
