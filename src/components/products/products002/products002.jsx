@@ -9,8 +9,8 @@ const products = [
   {
       imag:V10282,
       nome: "Varinha Bolinha de Guizo com Pelúcia",
-      medidas:"35cm",
-      ref:10282,
+      medidas:"Medidas: 35cm",
+      ref:"Código: 10282",
       a1:"1x Varinha bolinha de guizo com pelúcia",
       preco: 6.90,
   },
@@ -18,11 +18,14 @@ const products = [
 
 function Products002 () {
 
-  const { adicionarItem, formatarMoeda, info, setInfo } = useContext(UseContext);
+    const { adicionarItem, formatarMoeda, info, setInfo } = useContext(UseContext);
 
     const newProducts = products.map((it) => {
-        return {...it, preco: (it.preco * 0.15 + it.preco).toFixed(2)}
-      })
+        return {
+            ...it, preco: (it.preco * 0.15 + it.preco).toFixed(2),
+            precoPix: ((it.preco * 0.15 + it.preco) - (it.preco *  0.15 + it.preco) * 0.05).toFixed(2)
+        }
+    })
 
     return (
         <ContainerProd>
@@ -36,7 +39,7 @@ function Products002 () {
                             <b>{it.ref}</b>
                         </ContentINC>
                     </ContainerINC>
-                    <Info height="68%" info={info}>
+                    <Info height="63%" info={info}>
                         <span>{it.material}</span>
                         <span>{it.medidas}</span>
                         <span>{it.diametroE}</span>
@@ -45,10 +48,11 @@ function Products002 () {
                         <span>{it.a1} {it.a2}</span>
                     </Info>
                     <ContainerPIA>
-                        <b>Á Vista por <preco> { formatarMoeda(it.preco * 1) } </preco><frete> + valor do frete</frete></b>
+                        <span>À Vista <preco>{ formatarMoeda(it.preco * 1) }</preco> + valor do frete</span>
+                        <span> No Pix <preco>{formatarMoeda(it.precoPix * 1)}</preco> + valor do frete</span>
                         <ContentPIA>
                             <button1 onClick={()=>setInfo(!info)}>{info ? 'Ver Foto' : 'Informações'}</button1>
-                            <button2 onClick={() => adicionarItem(it.ref, newProducts)}><CgAdd />Adicionar<BsCart4 /></button2>
+                            <button2 onClick={() => adicionarItem(it.ref, newProducts)}>Adicionar <CgAdd /> <BsCart4 /></button2>
                         </ContentPIA>
                     </ContainerPIA>
                 </ContentProd>

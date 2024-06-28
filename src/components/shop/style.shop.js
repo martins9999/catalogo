@@ -131,7 +131,8 @@ export const Total = styled.div`
     color: #000;
     font-weight: 600;
     >span {
-        >b {
+        color: blue;
+        b {
             color: green;
         }
     }

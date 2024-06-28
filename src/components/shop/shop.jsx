@@ -11,10 +11,10 @@ const Shop = ({onOff}) => {
 
     const totalValor = shoppingCart.reduce((acc, it) => 
         it.quantity * it.product.preco + acc, 0
-)
+    )
     const precoPix = shoppingCart.reduce((acc, it) => 
         (it.quantity * it.product.preco - (it.quantity * it.product.preco * 0.05).toFixed(2) + acc) , 0
-)
+    )
 
 
     
@@ -45,8 +45,9 @@ const Shop = ({onOff}) => {
             { emptyCart ?
                 <Total onOff={onOff}> 
                     <span>Total do Carrinho</span>  
-                    <span><b>{qttItemsShop}</b> Produtos</span>  
-                    <span>Á Vista <b>{formatarMoeda(totalValor)}</b> ou no Pix <b>{formatarMoeda(precoPix)}</b> + frete</span>
+                    <span><b>{qttItemsShop}</b> Produtos</span>
+                    <span>À Vista <b>{ formatarMoeda(totalValor) }</b> + valor do frete</span>
+                    <span> No Pix <b>{formatarMoeda(precoPix)}</b> + valor do frete</span> 
                     <button onClick={()=>{limparCarrinho()}}>Limpar <RiDeleteBinLine/><BsCartX/></button>   
                 </Total>
             :''}

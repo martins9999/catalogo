@@ -47,7 +47,7 @@ export const ContentProd = styled.div`
 export const ContainerINC = styled.div`
     font-size: 15px;
     width: 100%;
-    height: ${props => props.info ? '17%' : '85%'};
+    height: ${props => props.info ? '17%' : '80%'};
     flex-direction: ${props => props.info ? 'row' : 'column'};
     padding: ${props => props.info ? '6px' : '6px 6px 0 6px'};
     gap: ${props => props.info ? '6px' : '0'};
@@ -88,7 +88,7 @@ export const Info = styled.div`
 `;
 export const ContainerPIA = styled.div`
     width: 100%;
-    height: ${props => props.info ? '15%' : '15%'};
+    height: ${props => props.info ? '20%' : '20%'};
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -103,7 +103,7 @@ export const ContainerPIA = styled.div`
             color: green;
         }
     } */
-    >b {
+    >span {
         color: blue;
         preco {
             color: green;
@@ -111,6 +111,7 @@ export const ContainerPIA = styled.div`
     }
 `;
 export const ContentPIA = styled.div`
+
     padding-left: 7px;
     display: flex;
     gap: 10px;
