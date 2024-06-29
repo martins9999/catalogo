@@ -45,6 +45,11 @@ import CA10984 from '../../../assets/casas-arranhadores/10984.png';
 import CA10985 from '../../../assets/casas-arranhadores/10985.png';
 
 import CA10291 from '../../../assets/casas-arranhadores/10291.png';
+import CA10292 from '../../../assets/casas-arranhadores/10292.png';
+import CA10293 from '../../../assets/casas-arranhadores/10293.png';
+import CA10295 from '../../../assets/casas-arranhadores/10295.png';
+import CA10296 from '../../../assets/casas-arranhadores/10296.png';
+
 import { useContext } from 'react';
 import { UseContext } from '../../../context/context';
 import { ContainerINC, ContainerPIA, ContainerProd, ContentINC, ContentPIA, ContentProd, Info } from '../style.products';
@@ -637,13 +642,66 @@ const products = [
     },
     {
         imag:CA10291,
-        nome:"Canto de Sofá Sisal",
-        material:"Cor: Roxo",
+        nome:"Canto de Sofá Sisal Roxo",
         medidas:"Medidas: (C:30)x(L:30)x(A:50)Cm",
         recomendado:"Recomendado: para gatos adultos e filhotes",
         ref:"Código: 10291",
-        a1:"1x Canto de sofá roxo",
-        preco:165.22,   
+        a1:"1x Canto de Sofá Roxo",
+        preco:39.90,   
+    },
+    {
+        imag:CA10292,
+        nome:"Canto de Sofá Sisal Rosa Bebê",
+        medidas:"Medidas: (C:30)x(L:30)x(A:50)Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10292",
+        a1:"1x Canto de Sofá Rosa Bebê",
+        preco:39.90,   
+    },
+    {
+        imag:CA10293,
+        nome:"Canto de Sofá Sisal Azul Royal",
+        medidas:"Medidas: (C:30)x(L:30)x(A:50)Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10293",
+        a1:"1x Canto de Sofá Azul Royal",
+        preco:39.90,   
+    },
+    {
+        imag:'',
+        nome:"Canto de Sofá Carpete Azul Royal",
+        medidas:"Medidas: (C:30)x(L:30)x(A:50)Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10294",
+        a1:"1x Canto de Sofá Azul Royal",
+        preco:39.90,   
+    },
+    {
+        imag:CA10295,
+        nome:"Canto de Sofá Sisal Vermelho",
+        medidas:"Medidas: (C:30)x(L:30)x(A:50)Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10295",
+        a1:"1x Canto de Sofá Vermelho",
+        preco:39.90,   
+    },
+    {
+        imag:CA10296,
+        nome:"Canto de Sofá Sisal Marrom",
+        medidas:"Medidas: (C:30)x(L:30)x(A:50)Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10296",
+        a1:"1x Canto de Sofá Marrom",
+        preco:39.90,   
+    },
+    {
+        imag:'',
+        nome:"Canto de Sofá Carpete Marrom",
+        medidas:"Medidas: (C:30)x(L:30)x(A:50)Cm",
+        recomendado:"Recomendado: para gatos adultos e filhotes",
+        ref:"Código: 10297",
+        a1:"1x Canto de Sofá Marrom",
+        preco:39.90,   
     },
 ]
 

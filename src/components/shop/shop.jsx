@@ -28,7 +28,7 @@ const Shop = ({onOff}) => {
                         <img alt="" src={item.product.imag}  />
                         <TextShoppinCart>
                             <b>{item.product.nome}</b>
-                            <span>Código: <codigo>{item.product.ref}</codigo></span>
+                            <span><codigo>{item.product.ref}</codigo></span>
                             <span>Preço da unidade: <preco>{formatarMoeda(item.product.preco * 1)} </preco></span>
                             <span>Quantidade: 
                                 <CgRemove onClick={() => removerItem(item.product.ref)}/>

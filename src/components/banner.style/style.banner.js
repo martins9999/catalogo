@@ -14,7 +14,7 @@ export const ContainerBanner = styled.div`
     font-size: 50px;
     font-weight: 600;
     background-color: rgb(50,80,200);
-    color: #fff;
+    color: greenyellow;
 
 @media only screen and (min-device-width : 300px) and (max-device-width : 599px) {
     height: 50px;

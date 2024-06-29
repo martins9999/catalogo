@@ -16,6 +16,7 @@ export const ButtonContainer = styled.div`
     width: 28px;
     height: 28px;
     cursor: pointer;
+    color: #fff;
 &:hover {
     color: yellow;
 }
@@ -173,15 +174,16 @@ export const ShoppingCartSvg = styled.div`
     align-items: center;
     position: absolute;
     left: 50px;
+    animation: ${props => props.emptyCart ? 'rot 2s infinite linear' : ''};
     > divv {
         > svg {
         width: 32px;
         height: 32px;
         cursor: pointer;
+        color: #fff;
     }
     }
     > svg {
-        animation: ${props => props.emptyCart ? 'rot 2s infinite linear' : ''};
         width: 32px;
         height: 32px;
         cursor: pointer;
@@ -197,19 +199,20 @@ export const ShoppingCartSvg = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 @keyframes rot {
     0% {
         transform: rotate(0);
-        color: burlywood;
+        color: greenyellow;
     }
     50% {
-        transform: rotate(-10deg);
-        color: yellow;
+        transform: rotate(-5deg);
+        color: greenyellow;
     }
     100% {
         transform: rotate(0);
-        color: aquamarine;
+        color: greenyellow;
     }
 }
 

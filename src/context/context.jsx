@@ -10,7 +10,7 @@ export const UseStorage = ({children}) => {
    const [qttItemsShop, setQttItemsShop] = useState()
    const [emptyCart, setEmptyCart] = useState(false)
    const [info, setInfo] = useState(false)
-   console.log(qttItemsShop)
+   console.log(shoppingCart)
 
    const formatarMoeda = (valor) =>{
         return valor.toLocaleString('pt-br', {
