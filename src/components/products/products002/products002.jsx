@@ -1,4 +1,15 @@
-import V10282 from '../../../assets/brinquedos-acessorios/v-10282.jpg';
+import BR10177 from '../../../assets/brinquedos-acessorios/10177.png';
+import BR10176 from '../../../assets/brinquedos-acessorios/10176.png';
+import BR10280 from '../../../assets/brinquedos-acessorios/10280.png';
+import BR10281 from '../../../assets/brinquedos-acessorios/10281.png';
+import BR10282 from '../../../assets/brinquedos-acessorios/10282.png';
+import BR10283 from '../../../assets/brinquedos-acessorios/10283.png';
+import BR10175 from '../../../assets/brinquedos-acessorios/10175.png';
+import BR10284 from '../../../assets/brinquedos-acessorios/10284.png';
+import BR10174 from '../../../assets/brinquedos-acessorios/10174.png';
+import BR10285 from '../../../assets/brinquedos-acessorios/10285.png';
+import BR10286 from '../../../assets/brinquedos-acessorios/10286.png';
+import BR10287 from '../../../assets/brinquedos-acessorios/10287.png';
 import { useContext } from 'react';
 import { UseContext } from '../../../context/context';
 import { ContainerINC, ContainerPIA, ContainerProd, ContentINC, ContentPIA, ContentProd, Info } from '../style.products';
@@ -7,12 +18,88 @@ import { BsCart4 } from 'react-icons/bs';
 
 const products = [
   {
-      imag:V10282,
+      imag:BR10177,
+      nome: "Varinha de Penas",
+      ref:"Código: 10177",
+      a1:"1x Varinha de penas",
+      preco: 5.90,
+  },
+  {
+      imag:BR10176,
+      nome: "Varinha Ping Penas",
+      ref:"Código: 10176",
+      a1:"1x Varinha ping penas",
+      preco: 5.90,
+  },
+  {
+      imag:BR10280,
+      nome: "Varinha Bolinha de Guizo com Penas",
+      ref:"Código: 10280",
+      a1:"1x Varinha bolinha de guizo com penas",
+      preco: 5.90,
+  },
+  {
+      imag:BR10281,
+      nome: "Varinha Borboleta",
+      ref:"Código: 10281",
+      a1:"1x Varinha borboleta",
+      preco: 8.90,
+  },
+  {
+      imag:BR10282,
       nome: "Varinha Bolinha de Guizo com Pelúcia",
-      medidas:"Medidas: 35cm",
       ref:"Código: 10282",
       a1:"1x Varinha bolinha de guizo com pelúcia",
       preco: 6.90,
+  },
+  {
+      imag:BR10283,
+      nome: "Varinha Bolinha com Pelúcia",
+      ref:"Código: 10283",
+      a1:"1x Varinha bolinha com pelúcia",
+      preco: 6.90,
+  },
+  {
+      imag:BR10175,
+      nome: "",
+      ref:"Código: 10175",
+      a1:"1x ",
+      preco: 5.90,
+  },
+  {
+      imag:BR10284,
+      nome: "",
+      ref:"Código: 10284",
+      a1:"1x ",
+      preco: 8.90,
+  },
+  {
+      imag:BR10174,
+      nome: "",
+      ref:"Código: 10174",
+      a1:"1x ",
+      preco: 5.90,
+  },
+  {
+      imag:BR10285,
+      nome: "",
+      ref:"Código: 10285",
+      a1:"1x ",
+      preco: 8.90,
+  },
+  {
+      imag:BR10286,
+      nome: "",
+      ref:"Código: 10286",
+      a1:"1x ",
+      preco: 5.90,
+  },
+  {
+      imag:BR10287,
+      nome: "",
+      ref:"Código: 10287",
+      a1:"1x ",
+      preco: 7.90,
   },
 ]
 
@@ -40,11 +127,6 @@ function Products002 () {
                         </ContentINC>
                     </ContainerINC>
                     <Info height="63%" info={info}>
-                        <span>{it.material}</span>
-                        <span>{it.medidas}</span>
-                        <span>{it.diametroE}</span>
-                        <span>{it.diametroI}</span>
-                        <span>{it.recomendado}</span>
                         <span>{it.a1} {it.a2}</span>
                     </Info>
                     <ContainerPIA>

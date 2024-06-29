@@ -1,9 +1,9 @@
 import { Barra, Button, HomeContainer} from "./style.home";
 import CA10196 from '../../assets/casas-arranhadores/10196.png';
 import CA10225 from '../../assets/casas-arranhadores/10225.png';
-import CA10234 from '../../assets/casas-arranhadores/10234.png';
+import BR10176 from '../../assets/brinquedos-acessorios/10176.png';
 import CA10219 from '../../assets/casas-arranhadores/10219.png';
-import CA10232 from '../../assets/casas-arranhadores/10232.png';
+import BR10281 from '../../assets/brinquedos-acessorios/10281.png';
 import { ContainerBanner, ContentText } from "../../components/banner.style/style.banner";
 import { CgAdd } from "react-icons/cg";
 import { BsCart4 } from "react-icons/bs";
@@ -38,16 +38,11 @@ const products = [
     },
     
     {
-        imag:CA10234,
-       nome:"Arranhador Irwin",
-        material:"Material: MDF,pelúcia e sisal",
-        medidas:"Medidas: (C:58)x(L:48)x(A:110)Cm",
-        diametroE:"Diâmetro dos orifícios exteriores: 18Cm",
-        diametroI:"Diâmetro do orificio circular do interior: 18Cm",
-        recomendado:"Recomendado: para gatos adultos e filhotes",
-        ref:"Código: 10234",
-        a1:"1x arranhador Irwin",
-        preco:353.75,   
+        imag:BR10281,
+        nome: "Varinha Borboleta",
+        ref:"Código: 10281",
+        a1:"1x Varinha borboleta",
+        preco: 8.90,
     },
 
     {
@@ -63,16 +58,11 @@ const products = [
         preco:89.51,   
     },
     {
-        imag:CA10232,
-       nome:"Arranhador Houston",
-        material:"Material: MDF,pelúcia e sisal",
-        medidas:"Medidas: (C:30)x(L:50)x(A:80)Cm",
-        diametroE:"Diâmetro dos orifícios exteriores: 18Cm",
-        diametroI:"Diâmetro do orificio circular do interior: 18Cm",
-        recomendado:"Recomendado: para gatos adultos e filhotes",
-        ref:"Código: 10232",
-        a1:"1x arranhador Houston",
-        preco:142.50,   
+        imag:BR10176,
+        nome: "Varinha Ping Penas",
+        ref:"Código: 10176",
+        a1:"1x Varinha ping penas",
+        preco: 5.90,
     },
   
   ]

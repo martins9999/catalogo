@@ -164,12 +164,6 @@ export const ContentInput = styled.div`
 }
 }
 `;
-export const X = styled.div`
-    width: 60px;
-    color: red;
-    display: flex;
-    justify-content: flex-end;
-`;
 export const ShoppingCartSvg = styled.div`
     width: 60px;
     height: 50px;
@@ -179,12 +173,19 @@ export const ShoppingCartSvg = styled.div`
     align-items: center;
     position: absolute;
     left: 50px;
-    animation: ${props => props.emptyCart ? 'rot 5s infinite linear' : ''};
-> svg {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-}
+    > divv {
+        > svg {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    }
+    }
+    > svg {
+        animation: ${props => props.emptyCart ? 'rot 2s infinite linear' : ''};
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    }
 > span {
     position: absolute;
     top: 5px;
@@ -199,13 +200,16 @@ export const ShoppingCartSvg = styled.div`
 }
 @keyframes rot {
     0% {
-        color: greenyellow;
+        transform: rotate(0);
+        color: burlywood;
     }
     50% {
+        transform: rotate(-10deg);
         color: yellow;
     }
     100% {
-        color: cyan;
+        transform: rotate(0);
+        color: aquamarine;
     }
 }
 

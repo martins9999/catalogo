@@ -53,7 +53,7 @@ function Header () {
                     {openMenu ?
                         '':
                         openShoppingCart ?
-                            <GoX onClick={ ()=> setOpenShoppingCart(false) }/>
+                            <divv><GoX onClick={ ()=> setOpenShoppingCart(false) }/></divv>    
                         :
                         <>
                             <PiShoppingCart onClick={ ()=> setOpenShoppingCart(true) }/>

@@ -6,7 +6,7 @@ export const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(#87ceeb, #e0f6ff);
+    background-color: rgb(50,80,200);
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 `;

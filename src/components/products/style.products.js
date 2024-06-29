@@ -5,7 +5,7 @@ export const ContainerProd = styled.div`
     margin-top: 50px;
     width: 97%;
     display: grid;
-    background-color: rgb(200,200,200);
+    background-color: rgb(220,220,220);
     grid-template-columns: repeat(5, 1fr);
     row-gap: 30px;
     column-gap: 20px;
@@ -33,7 +33,7 @@ export const ContentProd = styled.div`
     color: #000;
     display: flex;
     flex-direction: column;
-    border: rgb(90,140,90) .5px solid;
+    border: #000 .5px solid;
 &:hover {
 }
 

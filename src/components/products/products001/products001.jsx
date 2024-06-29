@@ -643,7 +643,7 @@ const products = [
         recomendado:"Recomendado: para gatos adultos e filhotes",
         ref:"Código: 10291",
         a1:"1x Canto de sofá roxo",
-        preco:39.90,   
+        preco:165.22,   
     },
 ]
 
