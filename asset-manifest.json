@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/catalogo/static/css/main.e6c13ad2.css",
-    "main.js": "/catalogo/static/js/main.62cca57c.js",
+    "main.js": "/catalogo/static/js/main.4f78360e.js",
     "static/media/10245.png": "/catalogo/static/media/10245.8e389998d10af2a787c9.png",
     "static/media/10219.png": "/catalogo/static/media/10219.e1e9dbf675a1ff54cb0a.png",
     "static/media/10214.png": "/catalogo/static/media/10214.7afd644caf850913a7db.png",
@@ -47,13 +47,25 @@
     "static/media/10237.png": "/catalogo/static/media/10237.9383860e442f3fc59c8a.png",
     "static/media/10200.png": "/catalogo/static/media/10200.d59c09507d3a9b35e1df.png",
     "static/media/10985.png": "/catalogo/static/media/10985.2a83bea0baea6e363d1c.png",
+    "static/media/10176.png": "/catalogo/static/media/10176.b811965363a238548b44.png",
     "static/media/10291.png": "/catalogo/static/media/10291.257935a1b7b328a8cd3c.png",
+    "static/media/10175.png": "/catalogo/static/media/10175.4c31524bafede2912a29.png",
+    "static/media/10284.png": "/catalogo/static/media/10284.0c4e7a4738c4ae303e5d.png",
+    "static/media/10285.png": "/catalogo/static/media/10285.ee25c3a62a67aa0dee89.png",
+    "static/media/10286.png": "/catalogo/static/media/10286.b06aea8bc0e07c8c981a.png",
+    "static/media/10283.png": "/catalogo/static/media/10283.4289a66a561d8e89fc08.png",
+    "static/media/10281.png": "/catalogo/static/media/10281.327fddaaf4c4c7596dcf.png",
+    "static/media/10174.png": "/catalogo/static/media/10174.88aba7a447c70fd7b37a.png",
+    "static/media/10177.png": "/catalogo/static/media/10177.f7ee3dc13b4eb805cc98.png",
+    "static/media/10282.png": "/catalogo/static/media/10282.85e0b2af3016000ecf87.png",
+    "static/media/10287.png": "/catalogo/static/media/10287.28dba9a7b50a9d733fc9.png",
+    "static/media/10280.png": "/catalogo/static/media/10280.bf8f6ccb2626566687e1.png",
     "index.html": "/catalogo/index.html",
     "main.e6c13ad2.css.map": "/catalogo/static/css/main.e6c13ad2.css.map",
-    "main.62cca57c.js.map": "/catalogo/static/js/main.62cca57c.js.map"
+    "main.4f78360e.js.map": "/catalogo/static/js/main.4f78360e.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.62cca57c.js"
+    "static/js/main.4f78360e.js"
   ]
 }
